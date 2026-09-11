@@ -15,6 +15,20 @@ AI/ML service for analyzing emotional language and generating an explainable
 
 ---
 
+# 🧠 RAAHAT AI
+
+### AI-Based Stress, Trauma & Distress Vulnerability Assessment
+
+[![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.141.1-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Scikit-learn](https://img.shields.io/badge/scikit--learn-1.9.0-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-3.0.5-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-2.5.2-013243?logo=numpy&logoColor=white)](https://numpy.org/)
+[![Joblib](https://img.shields.io/badge/Joblib-1.6.0-orange)](https://joblib.readthedocs.io/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-MVP%20Complete-success)]()
+[![SIH 2026](https://img.shields.io/badge/SIH-2026-blueviolet)]()
+
 ## 🚀 What is RAAHAT?
 
 **RAAHAT** is an AI-assisted support platform designed for victims and
