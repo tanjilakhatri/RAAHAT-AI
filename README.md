@@ -1,88 +1,89 @@
-\# RAAHAT — AI/ML Service
+# 🧠 RAAHAT AI
 
+### AI-Based Stress, Trauma & Distress Vulnerability Assessment
 
+<p align="center">
 
-\## Stress, Trauma \& Distress Prediction
+<b>Smart India Hackathon 2026 • SIH 26093</b>
 
+<br>
 
+AI/ML service for analyzing emotional language and generating an explainable
+<b>Stress Vulnerability Index (SVI)</b> to support human review.
 
-RAAHAT is an AI-based support system developed for the Smart India Hackathon 2026 problem statement:
+</p>
 
+---
 
+## 🚀 What is RAAHAT?
 
-\*\*SIH 26093 — AI-Based Real-Time Stress and Trauma Assessment Module for Victims/Complainants Accessing NHAA (14566) and Integrated Portal\*\*
+**RAAHAT** is an AI-assisted support platform designed for victims and
+complainants accessing the **National Helpline and Assistance Architecture
+(NHAA – 14566)**.
 
+The AI component analyzes user-provided text for emotional signals such as:
 
+`Fear` • `Sadness` • `Anger` • `Confusion` • `Nervousness`
 
-This repository contains the Artificial Intelligence and Machine Learning (AI/ML) component developed for the RAAHAT project.
+These signals are transformed into an explainable:
 
+> **Stress Vulnerability Index (SVI)**
 
+The resulting risk indicator can help downstream systems prioritize
+appropriate **human review and support**.
 
-The AI service analyzes text input and identifies emotional signals that may be associated with stress, distress, fear, sadness, anger, confusion, and related emotional vulnerability.
+### ⚠️ Responsible AI
 
+RAAHAT AI is **not a medical or clinical diagnostic system**.
 
+It does not diagnose:
 
-> \*\*Important:\*\* This system is a non-clinical AI support and risk-indication component. It does not diagnose mental illness, trauma, or any medical condition. AI output is intended to support human review and prioritization.
+- Trauma
+- PTSD
+- Depression
+- Anxiety disorders
+- Mental illness
 
+AI output is a **supporting vulnerability indicator** and must be reviewed
+by appropriate human professionals.
 
+---
 
-\---
-
-
-
-\# 1. Project Overview
-
-
-
-RAAHAT aims to provide an AI-assisted system that can help identify emotional stress and distress signals from text submitted by victims or complainants.
-
-
-
-The AI/ML component processes user text through a complete machine learning pipeline:
-
-
+# ✨ AI Pipeline
 
 ```text
-
-User Text
-
-&#x20;  ↓
-
-Input Validation
-
-&#x20;  ↓
-
-Text Preprocessing
-
-&#x20;  ↓
-
-TF-IDF Feature Extraction
-
-&#x20;  ↓
-
-Linear SVM Model
-
-&#x20;  ↓
-
-Emotion Signal Strengths
-
-&#x20;  ↓
-
-Stress/Distress Signal Groups
-
-&#x20;  ↓
-
-Stress Vulnerability Index (SVI)
-
-&#x20;  ↓
-
-Risk Category
-
-&#x20;  ↓
-
-Human Review
-
-&#x20;  ↓
-
-Backend Integration
-
+                    USER / COMPLAINANT
+                           │
+                           ▼
+                     Text Input
+                           │
+                           ▼
+                  ┌─────────────────┐
+                  │ Text Validation │
+                  └────────┬────────┘
+                           ▼
+                  ┌─────────────────┐
+                  │  Preprocessing  │
+                  └────────┬────────┘
+                           ▼
+                  ┌─────────────────┐
+                  │ TF-IDF Features │
+                  └────────┬────────┘
+                           ▼
+                  ┌─────────────────┐
+                  │   Linear SVM    │
+                  └────────┬────────┘
+                           ▼
+                 Emotion Signal Strengths
+                           │
+                           ▼
+                 Stress Signal Groups
+                           │
+                           ▼
+                Stress Vulnerability Index
+                           │
+                           ▼
+                    Risk Category
+                           │
+                           ▼
+                  👤 HUMAN REVIEW
