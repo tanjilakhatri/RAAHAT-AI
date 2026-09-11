@@ -62,47 +62,21 @@ AI output is a **supporting vulnerability indicator** and must be reviewed
 by appropriate human professionals.
 
 ---
-# 🧠 RAAHAT AI
-        ↓
-## 🚀 What is RAAHAT?
-        ↓
-# 🏗️ RAAHAT Project Architecture    ← ADD IT HERE
-        ↓
-# ✨ AI Pipeline
-        ↓
-# 👩‍💻 My Contribution — Member 2
-        ↓
-# 🛠️ Tech Stack
-        ↓
-# 📊 Dataset
-        ↓
-# 🧹 Data Quality & Leakage Prevention
-        ↓
-# ⚙️ Feature Engineering
-        ↓
-# 🤖 Model Development
-        ↓
-# 📈 Model Comparison
-        ↓
-# 🧩 Emotion Signal Mapping
-        ↓
-# 📊 Stress Vulnerability Index
-        ↓
-# 🔍 Example Inference
-        ↓
-# 🧠 Standalone Inference
-        ↓
-# 🌐 FastAPI Service
-        ↓
-# 🧪 Testing
-        ↓
-# 🔐 Responsible AI
-        ↓
-# 🚀 Future Roadmap
-        ↓
-# 📚 Documentation
-        ↓
-# 👩‍💻 Developer Contribution
+
+
+# 🏗️ RAAHAT Project Architecture    
+
+The following architecture illustrates the end-to-end flow of RAAHAT AI, from
+user text input through the FastAPI service and machine-learning pipeline to
+the Stress Vulnerability Index and human review.
+
+<p align="center">
+  <img src="images/raahat-architecture.png"
+       alt="RAAHAT AI Project Architecture"
+       width="100%">
+</p>
+
+
 
 
 
