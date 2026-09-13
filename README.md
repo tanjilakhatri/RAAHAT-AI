@@ -326,72 +326,11 @@ Follow these steps to set up RAAHAT-AI locally.
 ```bash
 git clone https://github.com/tanjilakhatri/RAAHAT-AI.git
 cd RAAHAT-AI
-````
-
-Yes. Keep the **Running RAAHAT-AI** section compact enough for one README page.
-
-**MODIFY EXISTING FILE — `README.md`**
-
-Replace the longer version I gave you with this:
-
-````markdown
-## Running RAAHAT-AI
-
-After installing the dependencies and activating the virtual environment, start the FastAPI service:
-
-```bash
-uvicorn api:app --reload
-````
-
-The application will be available at:
-
-```text
-http://127.0.0.1:8000
-```
-
-### Health Check
-
-Open:
-
-```text
-http://127.0.0.1:8000/
-```
-
-The service should return its running status.
-
-### Standalone AI Inference
-
-To test the trained model directly:
-
-```bash
-python -m src.inference
-```
-
-The inference pipeline generates predicted emotions, emotion signal strengths, Stress Vulnerability Index (SVI), risk category, and human-review status.
-
-### Automated Testing
-
-Run:
-
-```bash
-python -m tests.test_inference
-```
-
-This verifies inference consistency, input handling, output structure, and core inference behavior.
-
-```
-
-**No screenshot needed.**
-
-After this, the next section will be **API Usage**, also kept to one-page style.
-```
-
 
 ### 2. Create a Virtual Environment
 
 ```bash
 python -m venv .venv
-```
 
 ### 3. Activate the Virtual Environment
 
@@ -399,40 +338,83 @@ python -m venv .venv
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
-```
-
-#### Windows Command Prompt
-
-```cmd
-.venv\Scripts\activate
-```
 
 ### 4. Install Dependencies
 
+Install the required Python packages using the project's requirements file:
+
 ```bash
 pip install -r requirements.txt
-```
 
 ### 5. Verify the Environment
 
-Run:
+Verify that Python and pip are available:
 
 ```bash
 python --version
 pip --version
-```
 
-The project dependencies should now be installed and the virtual environment should be active.
+The RAAHAT-AI environment is now ready for application execution.
 
-```
 
-### Important
+## Running RAAHAT-AI
+Start the FastAPI application using:
+```bash
+uvicorn api:app --reload
+The application will be available at:
 
-Don't add another screenshot here. This is a **documentation section**, not part of the screenshot section we already closed.
+```text
+http://127.0.0.1:8000
+Once the server starts, FastAPI will be ready to receive requests.
 
-**Next after this:** `Running the RAAHAT-AI Application` — where we document how to start the FastAPI service and run inference. 
-```
+## API Usage
+The RAAHAT-AI backend provides two API endpoints:
+### 1. Health Check
 
+Check whether the RAAHAT-AI service is running:
+
+```bash
+GET /
+
+Example request:
+
+```text
+GET http://127.0.0.1:8000/
+Example response:
+
+```json
+{
+  "service": "RAAHAT AI",
+  "status": "running",
+  "diagnostic": false
+}
+
+### 2. Prediction
+
+Send user text to the `/predict` endpoint for AI-based emotion and stress/distress vulnerability analysis.
+Example request:
+
+```json
+{
+  "text": "I am very scared and confused about what happened. I don't know what to do."
+}
+Example request using PowerShell:
+
+```powershell
+Invoke-RestMethod -Uri http://127.0.0.1:8000/predict -Method Post -ContentType "application/json" -Body '{"text":"I am very scared and confused about what happened. I don''t know what to do."}'
+
+Example response:
+
+```json
+{
+  "input_text": "I am very scared and confused about what happened. I don't know what to do.",
+  "predicted_emotions": ["confusion", "fear"],
+  "svi_score": 30.46,
+  "risk_category": "Moderate",
+  "human_review_required": true,
+  "diagnostic": false
+}
+The prediction response is non-clinical and is intended to support human review rather than provide a medical diagnosis.
 
 
 ## Complete Project Workflow
@@ -1940,43 +1922,6 @@ Text length analysis was performed on the training dataset to understand the dis
 
 ![Text Length Analysis](screenshots/49-text-length-analysis.png)
 
-## API Usage
-
-RAAHAT-AI provides a REST API using FastAPI for health checking and AI-based text inference.
-
-### 1. Health Check
-
-**Method:** `GET`
-
-**Endpoint:**
-
-```text
-http://127.0.0.1:8000/
-
-Example
-curl http://127.0.0.1:8000/
-
-Example response
-{
-  "service": "RAAHAT AI",
-  "status": "running",
-  "diagnostic": false
-}
-
-## Example API Response
-
-A successful `/predict` request returns the processed input, predicted emotions, emotion signal strengths, SVI score, risk category, signal groups, and human-review status.
-
-```json
-{
-  "input_text": "I am very scared and confused about what happened.",
-  "predicted_emotions": ["confusion", "fear"],
-  "svi_score": 30.46,
-  "risk_category": "Moderate",
-  "human_review_required": true,
-  "diagnostic": false
-}
-
 ## Limitations
 
 RAAHAT-AI is an MVP designed for non-clinical stress and distress vulnerability assessment. The current system has the following limitations:
@@ -1987,52 +1932,35 @@ RAAHAT-AI is an MVP designed for non-clinical stress and distress vulnerability 
 - The Stress Vulnerability Index (SVI) is an indicator and should not be interpreted as a clinical score.
 - Human review is required for situations where the system identifies a moderate or higher vulnerability signal.
 - The current model requires further validation on diverse, real-world datasets.
+- The model may produce false positives or false negatives.
+- Predictions can be affected by the quality and context of the input text.
+- The current MVP is based on the GoEmotions dataset and may not represent every language, culture, or real-world situation.
+- The Stress Vulnerability Index (SVI) is an engineering indicator, not a clinical measurement.
 
 > **Important:** RAAHAT-AI does not diagnose mental health conditions and should not replace professional assessment.
 
 ## Responsible AI & Safety
 
-RAAHAT-AI is designed as a **non-clinical AI support system** for identifying potential stress, trauma, and distress vulnerability signals from text.
+RAAHAT-AI is designed as a non-clinical AI-assisted system. The results are intended to support human review and early awareness, not to diagnose, treat, or make clinical decisions.
 
-### Safety Principles
+Key safety principles include:
 
-- The system does **not provide medical or psychological diagnosis**.
-- The Stress Vulnerability Index (SVI) is an indicator, not a clinical measurement.
-- AI predictions should be treated as supportive signals rather than final decisions.
-- Moderate or higher vulnerability signals can be flagged for **human review**.
-- The system should not be used as the sole basis for medical, emergency, or other high-impact decisions.
-- Model limitations, false positives, false negatives, dataset limitations, and language limitations should be considered when interpreting results.
+- Human review for higher-risk predictions.
+- Clear separation between AI indicators and medical diagnosis.
+- Transparent reporting of model and dataset limitations.
+- Deterministic inference for consistent results.
+- Appropriate handling of invalid or empty inputs.
 
-> **Safety Principle:** RAAHAT-AI supports human decision-making; it does not replace qualified human judgment or professional assessment.
-
-### Next Section: Future Improvements
-
-**MODIFY EXISTING FILE — `README.md`**
-
-Paste **only this** after `## Responsible AI & Safety`:
-
-```markdown id="x3h5qz"
 ## Future Improvements
 
-The current RAAHAT-AI MVP can be further improved through:
-
-- Training and validating the model on larger and more diverse datasets.
-- Improving performance across different languages and writing styles.
-- Evaluating additional machine learning and transformer-based models.
-- Improving emotion-level and vulnerability-level prediction accuracy.
-- Strengthening explainability of AI-generated signals.
-- Adding continuous model monitoring and validation.
-- Improving privacy and secure handling of user-provided text.
-- Conducting broader real-world testing with appropriate human oversight.
-- Extending the system with additional responsible AI and safety mechanisms.
-
-These improvements can help make RAAHAT-AI more reliable, explainable, scalable, and suitable for future development.
-```
+- Expand evaluation with more diverse and representative datasets.
+- Improve multilingual and cross-cultural support.
+- Explore advanced NLP and transformer-based models.
+- Add stronger explainability for AI predictions.
+- Perform broader validation before real-world deployment.
+- Add production-ready monitoring and model versioning.
 
 ## Team & Contribution
-
-RAAHAT-AI was developed as a team project for **Smart India Hackathon 2026** under Problem Statement **SIH 26093**.
-
 ### My Contribution — Member 2: AI/ML
 
 My primary contribution focused on the AI/ML workflow of the project:
@@ -2056,9 +1984,15 @@ The AI/ML component was designed to provide interpretable, non-clinical vulnerab
 
 ## Conclusion
 
-RAAHAT-AI is an AI-based, non-clinical system designed to identify potential stress, trauma, and distress vulnerability signals from user-provided text.
+RAAHAT-AI demonstrates an end-to-end AI/ML workflow for non-clinical stress, trauma, and distress vulnerability assessment.
 
-The project combines text preprocessing, TF-IDF feature engineering, multi-label emotion classification, Linear SVM, emotion signal mapping, and the Stress Vulnerability Index (SVI) into a complete inference pipeline.
+The system combines emotion classification, stress signal mapping, SVI calculation, human-review indicators, and a FastAPI interface into a practical MVP.
+
+The project is intended as a responsible AI prototype that can be further evaluated and improved before any real-world deployment.
+
+
+
+
 
 The system also includes FastAPI integration, automated testing, human-review indicators, and responsible AI safeguards.
 
