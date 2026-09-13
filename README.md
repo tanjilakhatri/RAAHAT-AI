@@ -1,76 +1,55 @@
-# RAAHAT-AI
+# RAAHAT AI
 
 ## AI-Based Stress, Trauma & Distress Vulnerability Assessment
 
-**Smart India Hackathon 2026 — SIH 26093**
+<p align="center">
 
-> RAAHAT-AI is an AI/ML-based decision-support component designed to analyze emotionally relevant text, identify emotion signals, generate stress-related vulnerability indicators, and provide structured outputs for human review.
+**Smart India Hackathon 2026 | SIH 26093**
 
----
+An AI-powered, non-clinical system designed to analyze text-based emotional signals and generate a **Stress Vulnerability Index (SVI)** with interpretable risk indicators and human-review support.
 
-## Project Status
+</p>
 
+<p align="center">
+
+![Python](https://img.shields.io/badge/Python-3.13-blue)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-scikit--learn-orange)
+![FastAPI](https://img.shields.io/badge/API-FastAPI-009688)
 ![Status](https://img.shields.io/badge/Project%20Status-Completed-success)
-![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--learn-orange)
-![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?logo=fastapi)
-![Dataset](https://img.shields.io/badge/Dataset-GoEmotions-purple)
-![Hackathon](https://img.shields.io/badge/SIH-2026-blue)
+![SIH](https://img.shields.io/badge/Smart%20India%20Hackathon-2026-red)
+
+</p>
 
 ---
 
-# Table of Contents
+## Project at a Glance
 
-1. [Project Overview](#project-overview)
-2. [Problem Statement](#problem-statement)
-3. [Project Objective](#project-objective)
-4. [Proposed Solution](#proposed-solution)
-5. [Complete Project Workflow](#complete-project-workflow)
-6. [Project Architecture](#project-architecture)
-7. [Project Completion Roadmap](#project-completion-roadmap)
-8. [Step 1 — Project Environment Setup](#step-1--project-environment-setup)
-9. [Step 2 — Project Repository Setup](#step-2--project-repository-setup)
-10. [Step 3 — Dataset Collection](#step-3--dataset-collection)
-11. [Step 4 — Dataset Processing](#step-4--dataset-processing)
-12. [Step 5 — Dataset Quality Validation](#step-5--dataset-quality-validation)
-13. [Step 6 — Duplicate Analysis](#step-6--duplicate-analysis)
-14. [Step 7 — Text Normalization](#step-7--text-normalization)
-15. [Step 8 — Leakage Prevention](#step-8--leakage-prevention)
-16. [Step 9 — Dataset Splitting](#step-9--dataset-splitting)
-17. [Step 10 — Feature Engineering](#step-10--feature-engineering)
-18. [Step 11 — Machine Learning Model](#step-11--machine-learning-model)
-19. [Step 12 — Model Evaluation](#step-12--model-evaluation)
-20. [Step 13 — Model Saving](#step-13--model-saving)
-21. [Step 14 — Standalone Inference](#step-14--standalone-inference)
-22. [Step 15 — FastAPI Integration](#step-15--fastapi-integration)
-23. [Step 16 — API Testing](#step-16--api-testing)
-24. [Step 17 — AI-to-Backend Handoff](#step-17--ai-to-backend-handoff)
-25. [Step 18 — Responsible AI](#step-18--responsible-ai)
-26. [Step 19 — Final Testing](#step-19--final-testing)
-27. [Technology Stack](#technology-stack)
-28. [Dataset Details](#dataset-details)
-29. [Project Structure](#project-structure)
-30. [Testing Evidence](#testing-evidence)
-31. [Challenges and Solutions](#challenges-and-solutions)
-32. [Limitations](#limitations)
-33. [Future Scope](#future-scope)
-34. [Member 2 Contribution](#member-2-contribution)
-35. [Project Completion Checklist](#project-completion-checklist)
-36. [Screenshots Gallery](#screenshots-gallery)
-37. [How to Run](#how-to-run)
-38. [API Documentation](#api-documentation)
-39. [Responsible AI Disclaimer](#responsible-ai-disclaimer)
-40. [Conclusion](#conclusion)
+| Category | Details |
+|---|---|
+| Project | RAAHAT AI |
+| Problem Statement | SIH 26093 |
+| Hackathon | Smart India Hackathon 2026 |
+| Domain | Artificial Intelligence / Machine Learning |
+| Primary Task | Text-based multi-label emotion classification |
+| Dataset | GoEmotions |
+| Feature Engineering | TF-IDF |
+| Classification | Multi-label classification |
+| Baseline Model | Logistic Regression |
+| Selected MVP Model | Linear Support Vector Machine |
+| Inference | Standalone Python inference pipeline |
+| AI Service | FastAPI |
+| Risk Indicator | Stress Vulnerability Index (SVI) |
+| Human Oversight | Human-review flag |
+| System Positioning | Non-clinical AI decision-support component |
+| Current Status | Completed MVP |
 
 ---
 
-# Project Overview
+## What RAAHAT AI Does
 
-RAAHAT-AI is the **AI/ML component of the RAAHAT project** developed for **Smart India Hackathon 2026, Problem Statement SIH 26093**.
+RAAHAT AI processes text input and converts emotional signals into an interpretable vulnerability indicator.
 
-The purpose of this component is to process emotionally relevant textual input and convert it into structured machine-learning signals that can assist the broader RAAHAT system.
-
-The AI pipeline consists of:
+The system follows this pipeline:
 
 ```text
 User Text
@@ -81,1182 +60,1367 @@ Text Preprocessing
     ↓
 TF-IDF Feature Extraction
     ↓
-Linear Support Vector Machine
+Multi-Label Emotion Classification
     ↓
-Emotion Classification
+Emotion Signal Strength
     ↓
-Emotion Signals
+Signal Group Mapping
     ↓
-Stress Signal Groups
+Stress Vulnerability Index (SVI)
     ↓
-Stress Vulnerability Index
+Risk Category
     ↓
-Risk Interpretation
+Human Review Indicator
     ↓
-Human Review
-```
+FastAPI Response
 
-The system is designed as a **decision-support system**.
+## Table of Contents
 
-It is **not a medical diagnostic system**.
-
----
-
-# Problem Statement
-
-Emotionally sensitive text may contain useful information about a person's emotional state and vulnerability.
-
-Manually analyzing large volumes of such text can be difficult and time-consuming.
-
-RAAHAT-AI addresses this technical challenge by providing an AI-assisted pipeline that can:
-
-* Process textual input
-* Detect emotion-related patterns
-* Classify emotional signals
-* Aggregate relevant signals
-* Generate a structured vulnerability indicator
-* Provide the result to downstream application components
-* Keep human review in the decision-making process
-
----
-
-# Project Objective
-
-The major objectives of RAAHAT-AI are:
-
-1. Prepare an appropriate emotion-related dataset.
-2. Perform systematic dataset quality analysis.
-3. Identify duplicate and repeated text.
-4. Normalize text for grouping.
-5. Prevent duplicate-related data leakage.
-6. Create reliable training, validation and test datasets.
-7. Convert text into numerical TF-IDF features.
-8. Train a machine-learning classification model.
-9. Evaluate the model.
-10. Save the trained model for reuse.
-11. Build standalone inference.
-12. Expose inference through FastAPI.
-13. Provide a stable AI-to-Backend interface.
-14. Implement responsible-AI boundaries.
-15. Document the complete AI/ML implementation.
-
----
-
-# Proposed Solution
-
-The proposed solution uses a classical Natural Language Processing pipeline.
-
-```text
-                RAAHAT-AI
-                    │
-                    ▼
-              Text Input
-                    │
-                    ▼
-            Text Preprocessing
-                    │
-                    ▼
-                 TF-IDF
-                    │
-                    ▼
-              Linear SVM
-                    │
-                    ▼
-          Emotion Classification
-                    │
-                    ▼
-             Emotion Signals
-                    │
-                    ▼
-          Stress Signal Groups
-                    │
-                    ▼
-       Stress Vulnerability Index
-                    │
-                    ▼
-             Risk Category
-                    │
-                    ▼
-             Human Review
-```
+- [Project Overview](#project-overview)
+- [Problem Statement](#problem-statement)
+- [Project Motivation](#project-motivation)
+- [Proposed Solution](#proposed-solution)
+- [Project Objectives](#project-objectives)
+- [Key Features](#key-features)
+- [Complete Project Workflow](#complete-project-workflow)
+- [System Architecture](#system-architecture)
+- [AI/ML Architecture](#aiml-architecture)
+- [Technology Stack](#technology-stack)
+- [Dataset](#dataset)
+- [Dataset Preparation](#dataset-preparation)
+- [Data Quality Analysis](#data-quality-analysis)
+- [Duplicate Analysis](#duplicate-analysis)
+- [Text Normalization and Grouping](#text-normalization-and-grouping)
+- [Data Leakage Prevention](#data-leakage-prevention)
+- [Dataset Splitting](#dataset-splitting)
+- [Feature Engineering](#feature-engineering)
+- [Machine Learning Pipeline](#machine-learning-pipeline)
+- [Baseline Model](#baseline-model)
+- [Model Evaluation](#model-evaluation)
+- [Model Comparison](#model-comparison)
+- [Final Model Selection](#final-model-selection)
+- [Model Artifacts](#model-artifacts)
+- [Standalone Inference](#standalone-inference)
+- [Stress Vulnerability Index](#stress-vulnerability-index)
+- [Risk Categorization](#risk-categorization)
+- [Human Review](#human-review)
+- [FastAPI Integration](#fastapi-integration)
+- [API Documentation](#api-documentation)
+- [AI-to-Backend Integration](#ai-to-backend-integration)
+- [Testing](#testing)
+- [Responsible AI](#responsible-ai)
+- [Privacy and Data Safety](#privacy-and-data-safety)
+- [Challenges and Solutions](#challenges-and-solutions)
+- [Engineering Decisions](#engineering-decisions)
+- [Project Implementation](#project-implementation)
+- [Screenshots and Evidence](#screenshots-and-evidence)
+- [Project Structure](#project-structure)
+- [Current Project Status](#current-project-status)
+- [Future Scope](#future-scope)
+- [Learning Outcomes](#learning-outcomes)
+- [Team Contribution](#team-contribution)
+- [Conclusion](#conclusion)
+- [Disclaimer](#disclaimer)
 
 ---
 
-# Complete Project Workflow
+## Project Overview
 
-The project was completed through the following major phases:
+RAAHAT AI is an Artificial Intelligence and Machine Learning based system developed for the **Smart India Hackathon 2026 problem statement SIH 26093**.
 
-```text
-Phase 1
-Environment Setup
-        ↓
-Phase 2
-Repository Setup
-        ↓
-Phase 3
-Dataset Collection
-        ↓
-Phase 4
-Dataset Processing
-        ↓
-Phase 5
-Data Quality Validation
-        ↓
-Phase 6
-Duplicate Analysis
-        ↓
-Phase 7
-Text Normalization
-        ↓
-Phase 8
-Leakage Prevention
-        ↓
-Phase 9
-Dataset Splitting
-        ↓
-Phase 10
-Feature Engineering
-        ↓
-Phase 11
-Model Training
-        ↓
-Phase 12
-Model Evaluation
-        ↓
-Phase 13
-Model Serialization
-        ↓
-Phase 14
-Standalone Inference
-        ↓
-Phase 15
-FastAPI Integration
-        ↓
-Phase 16
-API Testing
-        ↓
-Phase 17
-AI → Backend Integration
-        ↓
-Phase 18
-Responsible AI
-        ↓
-Phase 19
-Final Testing
-```
+The project focuses on identifying textual signals associated with stress, trauma, fear, confusion, and other emotional states and converting these signals into a structured vulnerability indicator.
 
----
+Instead of treating the output as a medical diagnosis, RAAHAT AI is designed as a **non-clinical AI-assisted assessment and decision-support system**.
 
-# Project Architecture
-
-```mermaid
-flowchart TD
-
-A[User / Complainant] --> B[Frontend / Assessment Interface]
-
-B --> C[Backend]
-
-C --> D[FastAPI AI Service]
-
-D --> E[Input Validation]
-
-E --> F[Text Preprocessing]
-
-F --> G[TF-IDF Feature Extraction]
-
-G --> H[Linear SVM]
-
-H --> I[Emotion Signals]
-
-I --> J[Stress Signal Groups]
-
-J --> K[Stress Vulnerability Index]
-
-K --> L[Risk Category]
-
-L --> M[Human Review]
-
-N[GoEmotions Dataset] --> O[Training Pipeline]
-
-O --> P[Trained Model]
-
-P --> H
-```
-
----
-
-# Project Completion Roadmap
-
-| Step | Implementation          | Status    |
-| ---- | ----------------------- | --------- |
-| 1    | Environment Setup       | Completed |
-| 2    | Repository Setup        | Completed |
-| 3    | Dataset Collection      | Completed |
-| 4    | Dataset Processing      | Completed |
-| 5    | Data Quality Validation | Completed |
-| 6    | Duplicate Analysis      | Completed |
-| 7    | Text Normalization      | Completed |
-| 8    | Leakage Prevention      | Completed |
-| 9    | Dataset Splitting       | Completed |
-| 10   | Feature Engineering     | Completed |
-| 11   | Machine Learning Model  | Completed |
-| 12   | Model Evaluation        | Completed |
-| 13   | Model Saving            | Completed |
-| 14   | Standalone Inference    | Completed |
-| 15   | FastAPI Integration     | Completed |
-| 16   | API Testing             | Completed |
-| 17   | AI → Backend Handoff    | Completed |
-| 18   | Responsible AI          | Completed |
-| 19   | Final Testing           | Completed |
-
----
-
-# Step 1 — Project Environment Setup
-
-The first step was preparing the local development environment.
-
-### Environment
-
-```text
-Operating System: Windows 11
-Python: 3.13.5
-pip: 25.3
-Git: 2.55.0.windows.5
-```
-
-A Python virtual environment was created to isolate project dependencies.
-
-```text
-.venv/
-```
-
-### Why?
-
-Virtual environments prevent project dependencies from interfering with globally installed Python packages.
-
-### Verification
-
-Python and pip versions were checked after environment setup.
-
-### Screenshot Placeholder
-
-> **Screenshot 1 — Python and Environment Setup**
-
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• Python version
-• pip version
-• Active virtual environment
-• Windows terminal
-```
-
----
-
-# Step 2 — Project Repository Setup
-
-The RAAHAT-AI project repository was created and organized into separate directories.
-
-```text
-RAAHAT-AI/
-├── data/
-├── docs/
-├── images/
-├── models/
-├── outputs/
-├── src/
-├── tests/
-├── screenshots/
-├── api.py
-├── requirements.txt
-├── README.md
-└── .gitignore
-```
-
-### Why?
-
-Separating datasets, source code, models, outputs and tests improves maintainability.
-
-### Screenshot Placeholder
-
-> **Screenshot 2 — Project Folder Structure**
-
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• data
-• docs
-• images
-• models
-• outputs
-• src
-• tests
-• screenshots
-• api.py
-• requirements.txt
-```
-
----
-
-# Step 3 — Dataset Collection
-
-The project uses the **GoEmotions dataset** for emotion-related text classification.
-
-The original CSV files were organized under:
-
-```text
-data/goemotions/
-```
-
-The observed source files included:
-
-```text
-goemotions_1.csv
-goemotions_2.csv
-goemotions_3.csv
-```
-
-Each source file contained approximately 70,000 observed rows during processing.
-
-### Screenshot Placeholder
-
-> **Screenshot 3 — GoEmotions Dataset**
-
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• data/goemotions folder
-• CSV files
-• Dataset filenames
-```
-
----
-
-# Step 4 — Dataset Processing
-
-The raw dataset was processed into a project-specific consensus dataset.
-
-Final processed file:
-
-```text
-data/goemotions/goemotions_consensus.csv
-```
-
-The processed dataset contains:
-
-```text
-54,263 records
-```
-
-### Main Columns
-
-```text
-id
-text
-emotions
-num_consensus_emotions
-text_group
-```
-
-### Why?
-
-Processing the source data into a consistent project-specific format makes subsequent analysis and model training easier.
-
-### Screenshot Placeholder
-
-> **Screenshot 4 — Processed Dataset**
-
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• goemotions_consensus.csv
-• Dataset columns
-• Sample rows
-```
-
----
-
-# Step 5 — Dataset Quality Validation
-
-Several quality checks were performed.
-
-### Results
-
-| Check                       | Result |
-| --------------------------- | -----: |
-| Total Records               | 54,263 |
-| Missing Text                |      0 |
-| Missing Emotion Information |      0 |
-| Duplicate IDs               |      0 |
-
-This confirmed that the processed dataset had no missing text/emotion values in the observed validation and no duplicate IDs.
-
-### Screenshot Placeholder
-
-> **Screenshot 5 — Dataset Quality Validation**
-
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• Total rows
-• Missing values
-• Duplicate IDs
-• Validation output
-```
-
----
-
-# Step 6 — Duplicate Analysis
-
-Duplicate analysis was one of the important data-engineering steps.
-
-The analysis identified:
-
-```text
-269 duplicate raw text values
-435 rows involved
-166 unique duplicate groups
-74 duplicate groups with different emotion sets
-```
-
-### Why Was This Important?
-
-If duplicate or nearly identical records are distributed across training and testing datasets, evaluation results can become overly optimistic.
-
-Therefore, duplicate analysis was performed before splitting the dataset.
-
-### Screenshot Placeholder
-
-> **Screenshot 6 — Raw Duplicate Analysis**
-
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• Duplicate text count
-• Duplicate groups
-• Different emotion-set observation
-```
-
----
-
-# Step 7 — Text Normalization
-
-A normalized version of the text was created to identify related text records.
-
-The normalized grouping column was:
-
-```text
-text_group
-```
-
-Observed results:
-
-```text
-Unique text groups: 53,943
-Duplicate groups: 186
-Rows in duplicate groups: 506
-```
-
-### Why?
-
-Two texts can differ in superficial formatting while still representing the same underlying text.
-
-Normalization makes it possible to group such records more consistently.
-
-### Screenshot Placeholder
-
-> **Screenshot 7 — Text Normalization**
-
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• text_group column
-• Normalized text grouping
-• Duplicate group results
-```
-
----
-
-# Step 8 — Leakage Prevention
-
-The project uses a group-aware splitting strategy.
-
-The key technique is:
-
-```python
-GroupShuffleSplit(random_state=42)
-```
-
-Instead of treating every row as completely independent, normalized text groups are considered during splitting.
-
-### Workflow
-
-```text
-Text
- ↓
-Normalization
- ↓
-text_group
- ↓
-Group Identification
- ↓
-GroupShuffleSplit
- ↓
-Train / Validation / Test
-```
-
-### Why?
-
-This reduces the possibility that the same normalized text group appears in both training and evaluation partitions.
-
-### Screenshot Placeholder
-
-> **Screenshot 8 — Leakage Prevention**
-
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• GroupShuffleSplit
-• random_state=42
-• text_group based splitting
-```
-
----
-
-# Step 9 — Dataset Splitting
-
-The processed dataset was divided into training, validation and test sets.
-
-### Final Observed Split
-
-| Dataset    |       Rows |
-| ---------- | ---------: |
-| Training   |     43,412 |
-| Validation |      5,418 |
-| Test       |      5,433 |
-| **Total**  | **54,263** |
-
-### Training Set
-
-Used to train the machine-learning model.
-
-### Validation Set
-
-Used during model development and comparison.
-
-### Test Set
-
-Reserved for final evaluation.
-
-### Screenshot Placeholder
-
-> **Screenshot 9 — Train Validation Test Split**
-
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• Training rows
-• Validation rows
-• Test rows
-• Group counts if available
-• random_state
-```
-
----
-
-# Step 10 — Feature Engineering
-
-Raw text cannot be directly processed by a traditional machine-learning classifier.
-
-Therefore, text was converted into numerical features.
-
-RAAHAT-AI uses:
-
-## TF-IDF
-
-**Term Frequency–Inverse Document Frequency**
+The machine learning component processes text through a complete pipeline:
 
 ```text
 Raw Text
    ↓
-Text Processing
+Text Preprocessing
+   ↓
+TF-IDF Feature Extraction
+   ↓
+Multi-Label Emotion Classification
+   ↓
+Emotion Signal Strength
+   ↓
+Signal Group Mapping
+   ↓
+Stress Vulnerability Index (SVI)
+   ↓
+Risk Category
+   ↓
+Human Review Indicator
+
+## Problem Statement
+
+Stress and distress can be difficult to identify from limited interactions, especially when people communicate through short text messages or written responses.
+
+Text can contain useful emotional signals such as:
+
+- Fear
+- Confusion
+- Sadness
+- Anger
+- Anxiety-related expressions
+- Feelings of uncertainty
+- Other distress-related emotional patterns
+
+However, raw text is difficult for a conventional application to interpret directly.
+
+The challenge addressed by RAAHAT AI is therefore to build an AI pipeline that can:
+
+1. Accept text input.
+2. Preprocess the input consistently.
+3. Convert text into machine-readable numerical features.
+4. Identify one or more relevant emotional signals.
+5. Quantify the resulting emotional signals.
+6. Convert those signals into a Stress Vulnerability Index (SVI).
+7. Map the result into an interpretable risk category.
+8. Indicate when human review may be appropriate.
+9. Provide the result through a backend-compatible API.
+
+The system is intentionally positioned as a **non-clinical vulnerability assessment and decision-support component**.
+
+It must not be interpreted as a medical diagnosis, psychological diagnosis, or replacement for a qualified human professional.
+
+## Project Motivation
+
+The motivation behind RAAHAT AI is to explore how Artificial Intelligence can assist in identifying potentially important emotional signals from text.
+
+Traditional software systems generally process text as plain information. They may not understand that different words and expressions can indicate different emotional states.
+
+For example:
+
+```text
+"I am scared and confused about what happened."
+
+## Proposed Solution
+
+RAAHAT AI implements an end-to-end machine learning pipeline for text-based emotional signal analysis.
+
+The proposed solution consists of four major layers.
+
+### Layer 1 — Data and Machine Learning
+
+The system uses the GoEmotions dataset to learn relationships between textual expressions and emotion labels.
+
+The dataset is cleaned, validated, normalized, grouped, and split before model training.
+
+### Layer 2 — Emotion Prediction
+
+Text is converted into numerical features using TF-IDF.
+
+A multi-label classification approach is then used because a single text input can express multiple emotions simultaneously.
+
+The project initially establishes a Logistic Regression baseline and then compares it with a Linear Support Vector Machine.
+
+Based on the validation comparison, Linear SVM was selected for the current MVP.
+
+### Layer 3 — Risk Interpretation
+
+The predicted emotion signals are passed to an interpretation layer.
+
+This layer generates:
+
+- Emotion signal strengths
+- Signal groups
+- Stress Vulnerability Index (SVI)
+- Risk category
+- Human-review indication
+
+This separates the machine learning prediction from the application-level interpretation.
+
+### Layer 4 — Application Integration
+
+The completed inference pipeline is exposed through FastAPI.
+
+The backend can send text to:
+
+```http
+POST /predict
+
+## Project Objectives
+
+The main objective of RAAHAT AI is to develop an AI-assisted system that can analyze text-based emotional signals and convert them into an interpretable vulnerability indicator for further human attention.
+
+The project objectives are:
+
+### 1. Analyze Text-Based Emotional Signals
+
+Develop a machine learning pipeline capable of processing textual input and identifying relevant emotional patterns.
+
+### 2. Perform Multi-Label Emotion Classification
+
+Since a single text can express multiple emotions at the same time, the system is designed to identify multiple relevant emotion labels from a single input.
+
+### 3. Build a Reliable Data Pipeline
+
+Prepare and validate the dataset through:
+
+- Data cleaning
+- Missing-value checking
+- Duplicate analysis
+- Text normalization
+- Text grouping
+- Leakage prevention
+- Train, validation, and test splitting
+
+### 4. Develop Effective Text Features
+
+Convert natural-language text into machine-readable numerical representations using TF-IDF feature engineering with unigram and bigram features.
+
+### 5. Compare Machine Learning Models
+
+Establish a baseline model and compare it with an alternative classifier using validation metrics.
+
+The implemented comparison includes:
+
+```text
+Logistic Regression
+        VS
+Linear Support Vector Machine
+
+## Key Features
+
+- AI-based text emotion analysis
+- Multi-label emotion classification
+- TF-IDF feature extraction with unigram and bigram features
+- One-vs-Rest Linear Support Vector Machine model
+- Emotion signal strength calculation
+- Stress Vulnerability Index (SVI)
+- Risk category generation
+- Human review indication
+- FastAPI-based AI service
+- Structured JSON prediction response
+- Input validation and error handling
+- Deterministic inference for consistent results
+- Automated inference testing
+- Responsible AI and non-clinical safety design
+
+## Technology Stack
+
+| Category | Technologies |
+|---|---|
+| Programming Language | Python |
+| Data Processing | Pandas, NumPy |
+| Machine Learning | Scikit-learn |
+| Text Processing | TF-IDF, Unigram & Bigram Features |
+| ML Model | One-vs-Rest Linear Support Vector Machine |
+| Model Storage | Joblib |
+| Backend API | FastAPI |
+| API Server | Uvicorn |
+| Dataset | GoEmotions |
+| Testing | Python-based Inference Tests |
+| Version Control | Git, GitHub |
+| Development Environment | Windows 11, Python 3.13 |
+
+
+## Installation & Setup
+
+Follow these steps to set up RAAHAT-AI locally.
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/tanjilakhatri/RAAHAT-AI.git
+cd RAAHAT-AI
+````
+
+Yes. Keep the **Running RAAHAT-AI** section compact enough for one README page.
+
+**MODIFY EXISTING FILE — `README.md`**
+
+Replace the longer version I gave you with this:
+
+````markdown
+## Running RAAHAT-AI
+
+After installing the dependencies and activating the virtual environment, start the FastAPI service:
+
+```bash
+uvicorn api:app --reload
+````
+
+The application will be available at:
+
+```text
+http://127.0.0.1:8000
+```
+
+### Health Check
+
+Open:
+
+```text
+http://127.0.0.1:8000/
+```
+
+The service should return its running status.
+
+### Standalone AI Inference
+
+To test the trained model directly:
+
+```bash
+python -m src.inference
+```
+
+The inference pipeline generates predicted emotions, emotion signal strengths, Stress Vulnerability Index (SVI), risk category, and human-review status.
+
+### Automated Testing
+
+Run:
+
+```bash
+python -m tests.test_inference
+```
+
+This verifies inference consistency, input handling, output structure, and core inference behavior.
+
+```
+
+**No screenshot needed.**
+
+After this, the next section will be **API Usage**, also kept to one-page style.
+```
+
+
+### 2. Create a Virtual Environment
+
+```bash
+python -m venv .venv
+```
+
+### 3. Activate the Virtual Environment
+
+#### Windows PowerShell
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+#### Windows Command Prompt
+
+```cmd
+.venv\Scripts\activate
+```
+
+### 4. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Verify the Environment
+
+Run:
+
+```bash
+python --version
+pip --version
+```
+
+The project dependencies should now be installed and the virtual environment should be active.
+
+```
+
+### Important
+
+Don't add another screenshot here. This is a **documentation section**, not part of the screenshot section we already closed.
+
+**Next after this:** `Running the RAAHAT-AI Application` — where we document how to start the FastAPI service and run inference. 
+```
+
+
+
+## Complete Project Workflow
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center" width="180">
+
+### 📝
+<b>USER INPUT</b>
+
+Text message
+
+</td>
+<td align="center">→</td>
+<td align="center" width="180">
+
+### ✓
+<b>VALIDATION</b>
+
+Input checking
+
+</td>
+<td align="center">→</td>
+<td align="center" width="180">
+
+### ⚙️
+<b>PREPROCESSING</b>
+
+Text preparation
+
+</td>
+</tr>
+
+<tr>
+<td colspan="5" align="center">↓</td>
+</tr>
+
+<tr>
+<td align="center" width="180">
+
+### 🔢
+<b>TF-IDF</b>
+
+Feature extraction
+
+</td>
+<td align="center">→</td>
+<td align="center" width="180">
+
+### 🧠
+<b>LINEAR SVM</b>
+
+ML prediction
+
+</td>
+<td align="center">→</td>
+<td align="center" width="180">
+
+### 🎯
+<b>EMOTIONS</b>
+
+Multi-label output
+
+</td>
+</tr>
+
+<tr>
+<td colspan="5" align="center">↓</td>
+</tr>
+
+<tr>
+<td align="center" width="180">
+
+### 📊
+<b>SIGNAL STRENGTH</b>
+
+Emotion signals
+
+</td>
+<td align="center">→</td>
+<td align="center" width="180">
+
+### ⚠️
+<b>SVI</b>
+
+Vulnerability score
+
+</td>
+<td align="center" width="180">
+
+### 👤
+<b>HUMAN REVIEW</b>
+
+Attention indicator
+
+</td>
+</tr>
+
+<tr>
+<td colspan="5" align="center">↓</td>
+</tr>
+
+<tr>
+<td align="center" width="180">
+
+### 🚦
+<b>RISK CATEGORY</b>
+
+Application-level result
+
+</td>
+<td align="center">→</td>
+<td align="center" width="180">
+
+### 📦
+<b>JSON RESPONSE</b>
+
+Structured output
+
+</td>
+<td align="center" width="180">
+
+### 🚀
+<b>FASTAPI</b>
+
+AI service
+
+</td>
+</tr>
+</table>
+
+</div>
+
+### Workflow Explanation
+
+| Stage | Description |
+|---|---|
+| **1. User Input** | The system receives text from the user. |
+| **2. Input Validation** | The input is checked before processing. |
+| **3. Text Preprocessing** | The text is prepared for machine learning. |
+| **4. TF-IDF** | Text is converted into numerical features. |
+| **5. Unigram + Bigram Features** | Individual words and two-word combinations are considered. |
+| **6. One-vs-Rest Linear SVM** | The trained model performs multi-label emotion classification. |
+| **7. Emotion Prediction** | Multiple relevant emotions can be identified from one text. |
+| **8. Emotion Signal Strength** | Predicted emotions are converted into measurable signals. |
+| **9. Stress Vulnerability Index** | Emotional signals are mapped into an SVI score. |
+| **10. Risk Category** | The SVI is converted into an application-level risk category. |
+| **11. Human Review** | The system indicates when human attention should be considered. |
+| **12. JSON Response** | Results are returned in a structured format. |
+| **13. FastAPI** | The complete AI inference pipeline is exposed through the backend API. |
+
+> **Important:** RAAHAT AI is a non-clinical AI-assisted system. Its output is intended to support human attention and decision-making, not replace qualified human judgment.
+
+## System Architecture
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center" width="220">
+
+### 👤 USER
+Text Input
+
+</td>
+<td align="center">→</td>
+<td align="center" width="220">
+
+### 🚀 FASTAPI
+API Layer
+
+</td>
+<td align="center">→</td>
+<td align="center" width="220">
+
+### 🧠 AI ENGINE
+Inference Pipeline
+
+</td>
+</tr>
+
+<tr>
+<td colspan="5" align="center">↓</td>
+</tr>
+
+<tr>
+<td align="center" width="220">
+
+### 📝 TEXT
+Preprocessing
+
+</td>
+<td align="center">→</td>
+<td align="center" width="220">
+
+### 🔢 TF-IDF
+Feature Extraction
+
+</td>
+<td align="center" width="220">
+
+### 🎯 SVM
+Emotion Classification
+
+</td>
+</tr>
+
+<tr>
+<td colspan="5" align="center">↓</td>
+</tr>
+
+<tr>
+<td align="center" width="220">
+
+### 📊 SIGNALS
+Emotion Strength
+
+</td>
+<td align="center">→</td>
+<td align="center" width="220">
+
+### ⚠️ SVI
+Vulnerability Index
+
+</td>
+<td align="center" width="220">
+
+### 👨‍💼 REVIEW
+Human Attention
+
+</td>
+</tr>
+</table>
+
+</div>
+
+### Architecture Components
+
+| Component | Responsibility |
+|---|---|
+| **User** | Provides text input to the system. |
+| **FastAPI** | Receives requests and exposes the AI service. |
+| **Inference Pipeline** | Connects preprocessing, vectorization, model prediction and scoring. |
+| **TF-IDF** | Converts text into numerical features. |
+| **Linear SVM** | Predicts multiple emotional signals. |
+| **Emotion Signals** | Represents the detected emotional patterns. |
+| **SVI** | Produces the Stress Vulnerability Index. |
+| **Risk Category** | Converts the SVI into an application-level category. |
+| **Human Review** | Indicates when human attention should be considered. |
+
+> **Architecture Principle:** The AI layer provides an assistive signal. It does not make clinical diagnoses or replace human judgment.
+
+## AI/ML Architecture
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center" width="180">
+
+### 📥
+<b>TEXT INPUT</b>
+
+User message
+
+</td>
+<td align="center">→</td>
+<td align="center" width="180">
+
+### 🧹
+<b>PREPROCESSING</b>
+
+Clean & prepare
+
+</td>
+<td align="center">→</td>
+<td align="center" width="180">
+
+### 🔢
+<b>TF-IDF</b>
+
+10,000 features
+
+</td>
+</tr>
+
+<tr>
+<td colspan="5" align="center">↓</td>
+</tr>
+
+<tr>
+<td align="center" width="180">
+
+### 🔤
+<b>N-GRAMS</b>
+
+Unigram + Bigram
+
+</td>
+<td align="center">→</td>
+<td align="center" width="180">
+
+### 🧠
+<b>LINEAR SVM</b>
+
+One-vs-Rest
+
+</td>
+<td align="center" width="180">
+
+### 🎯
+<b>EMOTIONS</b>
+
+Multi-label output
+
+</td>
+</tr>
+
+<tr>
+<td colspan="5" align="center">↓</td>
+</tr>
+
+<tr>
+<td align="center" width="180">
+
+### 📊
+<b>SIGNALS</b>
+
+Emotion strengths
+
+</td>
+<td align="center">→</td>
+<td align="center" width="180">
+
+### ⚠️
+<b>SVI</b>
+
+Vulnerability score
+
+</td>
+<td align="center" width="180">
+
+### 👤
+<b>REVIEW</b>
+
+Human attention
+
+</td>
+</tr>
+</table>
+
+</div>
+
+### Machine Learning Pipeline
+
+```text
+Text Input
+    │
+    ▼
+Text Preprocessing
+    │
+    ▼
+TF-IDF Vectorization
+    │
+    ├── Unigram Features
+    └── Bigram Features
+    │
+    ▼
+One-vs-Rest Linear SVM
+    │
+    ▼
+Multi-Label Emotion Classification
+    │
+    ▼
+Emotion Signal Strengths
+    │
+    ▼
+Stress Vulnerability Index (SVI)
+    │
+    ▼
+Risk Category + Human Review Indicator
+
+## My Role as Member 2 — AI/ML
+
+As **Member 2**, my primary responsibility was the AI/ML component of RAAHAT AI.
+
+### Responsibilities
+
+| Area | Contribution |
+|---|---|
+| Dataset Processing | Prepared and validated the GoEmotions dataset |
+| Data Quality | Checked missing values, duplicate IDs and duplicate texts |
+| Text Grouping | Created normalized text groups to reduce data leakage |
+| Dataset Splitting | Created group-aware train, validation and test splits |
+| Feature Engineering | Implemented TF-IDF with unigram and bigram features |
+| Model Development | Built the baseline Logistic Regression model |
+| Model Comparison | Compared Logistic Regression with Linear SVM |
+| Model Selection | Selected Linear SVM for the current MVP |
+| Inference | Developed the standalone inference pipeline |
+| SVI | Integrated emotion signals into the Stress Vulnerability Index |
+| API Integration | Connected AI inference with FastAPI |
+| Testing | Tested different input types and inference consistency |
+| Responsible AI | Documented limitations, human review and non-clinical use |
+
+### AI/ML Contribution Flow
+
+```text
+GoEmotions Dataset
+        ↓
+Data Cleaning & Validation
+        ↓
+Duplicate & Leakage Analysis
+        ↓
+Group-Aware Dataset Split
+        ↓
+TF-IDF Feature Engineering
+        ↓
+Model Training
+        ↓
+Logistic Regression
+        ↓
+Linear SVM Comparison
+        ↓
+MVP Model Selection
+        ↓
+Inference Pipeline
+        ↓
+Emotion Signals
+        ↓
+Stress Vulnerability Index
+        ↓
+FastAPI Integration
+        ↓
+Testing & Validation
+
+## Dataset
+
+RAAHAT AI uses the **GoEmotions** dataset for emotion classification.
+
+### Dataset Overview
+
+| Property | Details |
+|---|---|
+| Dataset | GoEmotions |
+| Task | Multi-Label Emotion Classification |
+| Emotion Labels | 28 |
+| Source Files | `goemotions_1.csv`, `goemotions_2.csv`, `goemotions_3.csv` |
+| Processed Dataset | `goemotions_consensus.csv` |
+| Processed Rows | 54,263 |
+| Missing Text | 0 |
+| Missing Emotion Labels | 0 |
+| Duplicate IDs | 0 |
+
+### Why GoEmotions?
+
+GoEmotions provides a broad set of emotion categories that can be used to identify emotional signals from natural-language text.
+
+The dataset supports the project's multi-label classification approach, where a single text can contain more than one emotional signal.
+
+### Dataset Processing
+
+```text
+Raw GoEmotions CSV Files
+        ↓
+Dataset Combination
+        ↓
+Consensus-Based Label Preparation
+        ↓
+Missing Value Validation
+        ↓
+Duplicate ID Check
+        ↓
+Duplicate Text Analysis
+        ↓
+Text Normalization
+        ↓
+Text Group Creation
+        ↓
+Group-Aware Dataset Splitting
+        ↓
+Train / Validation / Test Data
+
+## Dataset Preparation
+
+The dataset preparation process was designed to improve data quality and reduce the possibility of data leakage during model evaluation.
+
+### Preparation Pipeline
+
+```text
+Raw CSV Files
+      ↓
+Combine Dataset
+      ↓
+Consensus Label Processing
+      ↓
+Missing Value Check
+      ↓
+Duplicate ID Check
+      ↓
+Duplicate Text Analysis
+      ↓
+Text Normalization
+      ↓
+Text Group Creation
+      ↓
+Group-Aware Splitting
+
+## Dataset Preparation
+
+The dataset preparation process was designed to improve data quality and reduce the possibility of data leakage during model evaluation.
+
+
+## Data Quality Analysis
+
+Before training the machine learning model, the dataset was examined for common data-quality issues.
+
+### Quality Checks Performed
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center" width="180">
+
+### ✓
+<b>Missing Values</b>
+
+0 detected
+
+</td>
+<td align="center" width="180">
+
+### ✓
+<b>Duplicate IDs</b>
+
+0 detected
+
+</td>
+<td align="center" width="180">
+
+### ⚠
+<b>Duplicate Text</b>
+
+Analyzed
+
+</td>
+</tr>
+
+<tr>
+<td align="center" width="180">
+
+### ✓
+<b>Text Groups</b>
+
+53,943 unique
+
+</td>
+<td align="center" width="180">
+
+### ✓
+<b>Emotion Labels</b>
+
+Validated
+
+</td>
+<td align="center" width="180">
+
+### ✓
+<b>Data Splits</b>
+
+Group-aware
+
+</td>
+</tr>
+</table>
+
+</div>
+
+### Duplicate Text Analysis
+
+The raw dataset contained repeated text entries. Therefore, duplicate analysis was performed at multiple levels:
+
+- Raw text duplication
+- Normalized text duplication
+- Duplicate text groups
+- Emotion-label differences among duplicate texts
+
+The analysis identified:
+
+| Metric | Result |
+|---|---:|
+| Duplicate Raw Text Values | 269 |
+| Rows Involved | 435 |
+| Unique Duplicate Groups | 166 |
+| Duplicate Groups With Different Emotion Sets | 74 |
+| Unique Normalized Text Groups | 53,943 |
+| Duplicate Normalized Groups | 186 |
+| Rows in Duplicate Groups | 506 |
+
+### Why This Matters
+
+Duplicate and repeated text can cause overly optimistic model evaluation if the same or highly similar examples appear in both training and evaluation datasets.
+
+To reduce this risk, normalized text groups were used during dataset splitting.
+
+> **Result:** The dataset preparation process was designed to provide a cleaner and more reliable foundation for model training and evaluation.
+
+
+## Data Quality Analysis
+
+Before training the machine learning model, the dataset was examined for common data-quality issues.
+
+### Quality Checks Performed
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center" width="180">
+
+### ✓
+<b>Missing Values</b>
+
+0 detected
+
+</td>
+<td align="center" width="180">
+
+### ✓
+<b>Duplicate IDs</b>
+
+0 detected
+
+</td>
+<td align="center" width="180">
+
+### ⚠
+<b>Duplicate Text</b>
+
+Analyzed
+
+</td>
+</tr>
+
+<tr>
+<td align="center" width="180">
+
+### ✓
+<b>Text Groups</b>
+
+53,943 unique
+
+</td>
+<td align="center" width="180">
+
+### ✓
+<b>Emotion Labels</b>
+
+Validated
+
+</td>
+<td align="center" width="180">
+
+### ✓
+<b>Data Splits</b>
+
+Group-aware
+
+</td>
+</tr>
+</table>
+
+</div>
+
+### Duplicate Text Analysis
+
+The raw dataset contained repeated text entries. Therefore, duplicate analysis was performed at multiple levels:
+
+- Raw text duplication
+- Normalized text duplication
+- Duplicate text groups
+- Emotion-label differences among duplicate texts
+
+The analysis identified:
+
+| Metric | Result |
+|---|---:|
+| Duplicate Raw Text Values | 269 |
+| Rows Involved | 435 |
+| Unique Duplicate Groups | 166 |
+| Duplicate Groups With Different Emotion Sets | 74 |
+| Unique Normalized Text Groups | 53,943 |
+| Duplicate Normalized Groups | 186 |
+| Rows in Duplicate Groups | 506 |
+
+### Why This Matters
+
+Duplicate and repeated text can cause overly optimistic model evaluation if the same or highly similar examples appear in both training and evaluation datasets.
+
+To reduce this risk, normalized text groups were used during dataset splitting.
+
+> **Result:** The dataset preparation process was designed to provide a cleaner and more reliable foundation for model training and evaluation.
+
+## Data Leakage Prevention
+
+Data leakage can cause machine learning models to appear more accurate than they actually are.
+
+RAAHAT AI addresses this risk by grouping identical or normalized text before creating the dataset splits.
+
+### Leakage Prevention Approach
+
+```text
+Raw Text
+   ↓
+Text Normalization
+   ↓
+Create Text Group
+   ↓
+GroupShuffleSplit
+   ↓
+Train Set
+Validation Set
+Test Set
+
+
+## Dataset Splitting
+
+The prepared dataset was divided into three groups for model development and evaluation.
+
+| Dataset Split | Rows | Groups | Purpose |
+|---|---:|---:|---|
+| Training | 43,412 | 43,154 | Train the machine learning model |
+| Validation | 5,418 | 5,394 | Compare and evaluate models |
+| Test | 5,433 | 5,395 | Final unseen-data evaluation |
+
+### Split Strategy
+
+The project uses:
+
+```text
+GroupShuffleSplit
+Random State = 42
+Grouping Column = text_group
+
+## Feature Engineering
+
+RAAHAT AI converts natural-language text into numerical features that can be processed by the machine learning model.
+
+### TF-IDF Vectorization
+
+The project uses **Term Frequency–Inverse Document Frequency (TF-IDF)** to represent text numerically.
+
+```text
+Raw Text
+   ↓
+Text Preprocessing
    ↓
 TF-IDF Vectorization
    ↓
 Numerical Feature Matrix
    ↓
-Machine Learning Model
-```
-
-### Why TF-IDF?
-
-TF-IDF provides an efficient sparse representation of text and works well with linear text-classification algorithms.
-
-### Screenshot Placeholder
-
-> **Screenshot 10 — TF-IDF Feature Engineering**
-
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• TF-IDF implementation
-• Feature extraction
-• Training pipeline
-```
-
----
-
-# Step 11 — Machine Learning Model
-
-The primary classification model used is:
-
-## Linear Support Vector Machine
-
-A Linear Support Vector Machine is suitable for high-dimensional sparse text representations.
-
-### Pipeline
-
-```text
-Text
- ↓
-TF-IDF
- ↓
 Linear SVM
- ↓
-Emotion Prediction
-```
 
-### Why Linear SVM?
+## Machine Learning Pipeline
 
-The model was selected because it provides a practical balance between:
+RAAHAT AI uses a multi-label text classification pipeline to identify emotional signals from user-provided text.
 
-* Performance
-* Computational efficiency
-* Simplicity
-* Reproducibility
-* Deployment practicality
-
-### Screenshot Placeholder
-
-> **Screenshot 11 — Model Training**
+### Model Pipeline
 
 ```text
-[INSERT SCREENSHOT HERE]
+Text Input
+    ↓
+TF-IDF Vectorization
+    ↓
+Unigram + Bigram Features
+    ↓
+One-vs-Rest Classification
+    ↓
+Linear SVM
+    ↓
+28 Emotion Labels
+    ↓
+Predicted Emotion Signals
 
-Show:
-• Model training code
-• Linear SVM
-• Training output
-```
+## Model Evaluation
 
----
+The models were evaluated using the validation dataset with multiple metrics to understand both overall and class-level performance.
 
-# Step 12 — Model Evaluation
+### Validation Results
 
-The model evaluation process considers:
+| Metric | Logistic Regression | Linear SVM |
+|---|---:|---:|
+| Micro Precision | 0.7109 | 0.6485 |
+| Micro Recall | 0.2672 | 0.3698 |
+| Micro F1 | 0.3884 | 0.4710 |
+| Macro F1 | 0.2070 | 0.3332 |
+| Hamming Loss | 0.0354 | 0.0349 |
 
-* Accuracy
-* Precision
-* Recall
-* F1 Score
-* Confusion Matrix
+### Evaluation Metrics
 
-### Why Multiple Metrics?
+**Micro Precision**  
+Measures the overall proportion of correctly predicted emotion labels among all predicted labels.
 
-Accuracy alone may not adequately represent model behavior when different classes have different distributions.
+**Micro Recall**  
+Measures how many of the relevant emotion labels were successfully identified.
 
-Precision and recall provide additional information about prediction quality.
+**Micro F1**  
+Provides a combined measure of precision and recall across all emotion labels.
 
-F1 Score combines precision and recall.
+**Macro F1**  
+Calculates F1 independently for each emotion and then averages the results, giving each emotion equal importance.
 
-The confusion matrix helps identify which emotion classes are being confused.
+**Hamming Loss**  
+Measures the fraction of incorrectly predicted labels.
 
-### Important
+### Baseline Validation
 
-Exact final numerical metrics should always be shown from the actual verified evaluation output rather than manually entered values.
-
-### Screenshot Placeholder
-
-> **Screenshot 12 — Model Evaluation Results**
-
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• Accuracy
-• Precision
-• Recall
-• F1 Score
-• Classification report
-```
-
----
-
-# Step 13 — Model Saving
-
-After training and evaluation, the trained model and required preprocessing components can be stored for later inference.
-
-The project contains:
+The Logistic Regression baseline achieved:
 
 ```text
-models/
-```
+Micro Precision : 0.7109
+Micro Recall    : 0.2672
+Micro F1        : 0.3884
+Macro F1        : 0.2070
+Hamming Loss    : 0.0354
 
-### Why?
 
-A production-style AI system should not retrain the model every time a user requests a prediction.
+## Model Persistence
 
-Instead:
+After training and selecting the MVP model, the required machine learning artifacts are saved so that the system can perform inference without retraining the model.
+
+### Saved Artifacts
+
+| Artifact | Purpose |
+|---|---|
+| Trained Model | Performs emotion classification |
+| TF-IDF Vectorizer | Converts new text into the same feature representation used during training |
+| Evaluation Metrics | Stores model performance information |
+| Model Comparison | Stores comparison results between evaluated models |
+
+### Persistence Workflow
 
 ```text
-Training
-   ↓
-Model Artifact
-   ↓
-Save
-   ↓
-Inference
-```
+Training Dataset
+      ↓
+Model Training
+      ↓
+Model Evaluation
+      ↓
+MVP Model Selection
+      ↓
+Save Model Artifacts
+      ↓
+Load Artifacts During Inference
+      ↓
+Predict New Text
 
-### Screenshot Placeholder
 
-> **Screenshot 13 — Saved Model Artifacts**
+## Standalone Inference
 
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• models folder
-• model files
-• preprocessing/vectorizer artifacts if present
-```
-
----
-
-# Step 14 — Standalone Inference
-
-The inference pipeline was separated from the training workflow.
-
-The API imports:
-
-```python
-from src.inference import run_inference
-```
-
-This means the Backend can request predictions without running the training pipeline.
+RAAHAT AI provides a separate inference pipeline that loads the saved model and vectorizer to process new text without retraining.
 
 ### Inference Flow
 
 ```text
-Input Text
-    ↓
-Load Model
-    ↓
-Preprocess
-    ↓
-TF-IDF Transform
-    ↓
-Model Prediction
-    ↓
-Signal Processing
-    ↓
-Result
-```
-
-### Screenshot Placeholder
-
-> **Screenshot 14 — Standalone Inference**
-
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• src/inference.py
-• run_inference()
-• Successful prediction output
-```
-
----
-
-# Step 15 — FastAPI Integration
-
-A FastAPI service was created in:
-
-```text
-api.py
-```
-
-The API provides:
-
-```text
-GET  /
-POST /predict
-```
-
-### FastAPI Architecture
-
-```text
-Client
-  ↓
-FastAPI
-  ↓
-Pydantic Validation
-  ↓
-run_inference()
-  ↓
-AI/ML Pipeline
-  ↓
-JSON Response
-```
-
-### Screenshot Placeholder
-
-> **Screenshot 15 — FastAPI Application**
-
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• api.py
-• FastAPI app
-• endpoints
-```
-
----
-
-# Step 16 — API Testing
-
-The FastAPI application provides interactive API documentation through Swagger.
-
-Start the server:
-
-```powershell
-uvicorn api:app --reload
-```
-
-Open:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-### Health Endpoint
-
-```text
-GET /
-```
-
-Expected response:
-
-```json
-{
-  "service": "RAAHAT AI",
-  "status": "running",
-  "diagnostic": false
-}
-```
-
-### Prediction Endpoint
-
-```text
-POST /predict
-```
-
-Example request:
-
-```json
-{
-  "text": "I feel scared and confused about what is happening."
-}
-```
-
-### Screenshot Placeholder
-
-> **Screenshot 16 — Swagger API Documentation**
-
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• / endpoint
-• /predict endpoint
-• Swagger UI
-```
-
----
-
-# Step 17 — AI-to-Backend Handoff
-
-A major objective of Member 2 was to make the AI component usable by the Backend team.
-
-The handoff architecture is:
-
-```text
-                    MEMBER 2
-                       │
-                       ▼
-              AI/ML Inference
-                       │
-                       ▼
-                FastAPI Service
-                       │
-                       ▼
-                 API Contract
-                       │
-                       ▼
-                    MEMBER 3
-                       │
-                       ▼
-               Backend Application
-```
-
-### AI Responsibilities
-
-Member 2 provides:
-
-* Model
-* Preprocessing
-* Feature extraction
-* Inference
-* Emotion signals
-* Vulnerability logic
-* API interface
-* Error behavior
-* Documentation
-
-### Backend Responsibilities
-
-The Backend consumes the AI service and integrates its output into the larger application.
-
-### Screenshot Placeholder
-
-> **Screenshot 17 — AI to Backend Integration**
-
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• API request
-• API response
-• Backend integration or Postman/Swagger evidence
-```
-
----
-
-# Step 18 — Responsible AI
-
-Responsible AI was considered throughout the project.
-
-RAAHAT-AI does not claim to diagnose mental-health conditions.
-
-The system should be understood as:
-
-```text
-Emotion Signal
+New Text Input
       ↓
-AI-Assisted Indicator
-      ↓
-Human Review
-```
-
-Not:
-
-```text
-Emotion Signal
-      ↓
-Medical Diagnosis
-```
-
-### Responsible AI Principles
-
-* Human-in-the-loop decision making
-* No clinical diagnosis claims
-* Awareness of dataset bias
-* Privacy awareness
-* Data minimization
-* Controlled interpretation
-* Clear limitations
-* Model governance
-
-### Screenshot Placeholder
-
-> **Screenshot 18 — Responsible AI / Project Documentation**
-
-```text
-[INSERT SCREENSHOT HERE]
-
-Show:
-• Responsible AI documentation
-• Non-diagnostic disclaimer
-• Human review principle
-```
-
----
-
-# Step 19 — Final Testing
-
-The final stage involved checking the complete AI service.
-
-### Final Testing Flow
-
-```text
-API Starts
-   ↓
-Health Check
-   ↓
 Input Validation
-   ↓
+      ↓
+Text Preprocessing
+      ↓
+Saved TF-IDF Vectorizer
+      ↓
+Saved Linear SVM Model
+      ↓
+Emotion Prediction
+      ↓
+Emotion Signal Strength
+      ↓
+Stress Vulnerability Index
+      ↓
+Risk Category
+      ↓
+Human Review Indicator
+
+## FastAPI Integration
+
+RAAHAT AI exposes the trained inference pipeline through a FastAPI service.
+
+### API Architecture
+
+```text
+Client / Frontend
+       ↓
+   FastAPI API
+       ↓
 Prediction Request
-   ↓
-Inference
-   ↓
-Output
-   ↓
-Error Handling
-```
+       ↓
+Input Validation
+       ↓
+run_inference()
+       ↓
+Saved ML Model + Vectorizer
+       ↓
+Prediction Processing
+       ↓
+JSON Response
 
-The API distinguishes between:
 
-### HTTP 400
+## API Endpoints
 
-Used when inference raises a `ValueError`.
+### 1. Health Check
 
-### HTTP 500
+**Method:** `GET`
 
-Used for unexpected inference failures.
-
-The current API returns:
-
-```json
-{
-  "detail": "AI inference failed."
-}
-```
-
-for unexpected inference failures.
-
-### Screenshot Placeholder
-
-> **Screenshot 19 — Final API Testing**
+**Endpoint:**
 
 ```text
-[INSERT SCREENSHOT HERE]
+/
 
-Show:
-• Successful health check
-• Successful prediction
-• Error handling if available
-```
+## AI to Backend Integration
 
----
+The AI/ML pipeline is integrated with the FastAPI backend through a dedicated inference function.
 
-# Technology Stack
-
-## Programming
-
-* Python 3.13
-
-## Data Processing
-
-* Pandas
-* NumPy
-
-## Machine Learning
-
-* Scikit-learn
-
-## NLP
-
-* TF-IDF
-
-## Classification
-
-* Linear Support Vector Machine
-
-## Model Serialization
-
-* Joblib
-
-## API
-
-* FastAPI
-* Pydantic
-* Uvicorn
-
-## Version Control
-
-* Git
-* GitHub
-
----
-
-# Dataset Details
-
-## Dataset
-
-**GoEmotions**
-
-The dataset was processed into a project-specific consensus dataset.
-
-### Final Processed Dataset
+### Integration Flow
 
 ```text
-data/goemotions/goemotions_consensus.csv
-```
+Client Request
+      ↓
+FastAPI `/predict`
+      ↓
+PredictionRequest
+      ↓
+run_inference(text)
+      ↓
+Load TF-IDF Vectorizer
+      ↓
+Load Linear SVM Model
+      ↓
+Emotion Prediction
+      ↓
+Emotion Signal Processing
+      ↓
+SVI Calculation
+      ↓
+Risk Category
+      ↓
+Human Review Indicator
+      ↓
+JSON Response
 
-### Records
+## Testing
 
-```text
-54,263
-```
+RAAHAT AI includes inference testing to verify that the AI pipeline behaves correctly across different types of input.
 
-### Columns
+### Test Cases
 
-```text
-id
-text
-emotions
-num_consensus_emotions
-text_group
-```
+| Test | Input Type | Result |
+|---|---|---|
+| 1 | Distress-related text | PASS |
+| 2 | Neutral text | PASS |
+| 3 | Positive text | PASS |
+| 4 | Empty input | PASS |
+| 5 | Consistency check | PASS |
+| 6 | Whitespace input | PASS |
+| 7 | Short text | PASS |
+| 8 | Long text | PASS |
+| 9 | Special characters | PASS |
+| 10 | Output structure | PASS |
 
----
+### Test Command
 
-# Dataset Validation Summary
+```bash
+python -m tests.test_inference
 
-```text
-Total Records                 : 54,263
-Missing Text                  : 0
-Missing Emotion Information   : 0
-Duplicate IDs                 : 0
-Raw Duplicate Text Values    : 269
-Raw Duplicate Rows           : 435
-Unique Duplicate Groups      : 166
-Groups With Different Labels : 74
-Unique Text Groups           : 53,943
-Normalized Duplicate Groups  : 186
-Rows in Duplicate Groups     : 506
-```
-
----
-
-# Project Structure
+## Project Structure
 
 ```text
 RAAHAT-AI/
 │
 ├── data/
 │   └── goemotions/
+│       ├── goemotions_1.csv
+│       ├── goemotions_2.csv
+│       ├── goemotions_3.csv
 │       └── goemotions_consensus.csv
 │
 ├── docs/
@@ -1267,681 +1431,635 @@ RAAHAT-AI/
 │
 ├── outputs/
 │
+├── screenshots/
+│
 ├── src/
+│   ├── model.py
 │   └── inference.py
 │
 ├── tests/
-│
-├── screenshots/
+│   └── test_inference.py
 │
 ├── api.py
-│
 ├── requirements.txt
-│
 ├── README.md
-│
 └── .gitignore
-```
+#### 1. Project Setup & Environment
 
----
+<p align="center">
+  <img src="screenshots/01-project-setup.png" width="850">
+</p>
 
-# Testing Evidence
+<p align="center">
+  <b>Project environment and initial setup</b>
+</p>
 
-The project should maintain evidence for the major implementation stages.
+#### 2. Dataset Collection & Processing
 
-Recommended evidence structure:
+<p align="center">
+  <img src="screenshots/02-dataset-processing.png" width="850">
+</p>
+
+<p align="center">
+  <b>GoEmotions dataset collection, processing, and consensus dataset preparation</b>
+</p>
+
+#### 3. Data Quality Analysis
+
+<p align="center">
+  <img src="screenshots/03-data-quality-analysis.png" width="850">
+</p>
+
+<p align="center">
+  <b>Missing-value validation, duplicate analysis, and dataset quality checks</b>
+</p>
+
+#### 4. Text Normalization & Grouping
+
+<p align="center">
+  <img src="screenshots/04-text-normalization-grouping.png" width="850">
+</p>
+
+<p align="center">
+  <b>Text normalization and creation of text groups for leakage prevention</b>
+</p>
+
+#### 5. Data Leakage Prevention & Dataset Splitting
+
+<p align="center">
+  <img src="screenshots/05-data-leakage-dataset-split.png" width="850">
+</p>
+
+<p align="center">
+  <b>Group-aware dataset splitting using normalized text groups</b>
+</p>
+
+#### 6. TF-IDF Feature Engineering
+
+<p align="center">
+  <img src="screenshots/06-tfidf-feature-engineering.png" width="850">
+</p>
+
+<p align="center">
+  <b>TF-IDF vectorization with unigram and bigram features</b>
+</p>
+
+#### 7. Baseline Model Training
+
+<p align="center">
+  <img src="screenshots/07-baseline-model-implementation.png" width="850">
+</p>
+
+<p align="center">
+  <b>Implementation of the baseline multi-label emotion classification model using Logistic Regression with One-vs-Rest</b>
+</p>
+
+
+#### 8. Model Comparison & MVP Selection
+
+<p align="center">
+  <img src="screenshots/08-model-comparison.png" width="850">
+</p>
+
+<p align="center">
+  <b>Validation-based comparison of Logistic Regression and Linear SVM</b>
+</p>
+
+#### 9. Model Persistence & Artifact Verification
+
+<p align="center">
+  <img src="screenshots/09-model-artifact-verification.png" width="850">
+</p>
+
+<p align="center">
+  <b>Verification of trained model, TF-IDF vectorizer, evaluation metrics, and documentation artifacts</b>
+</p>
+
+#### 10. Baseline Model Evaluation
+
+<p align="center">
+  <img src="screenshots/10-baseline-model-evaluation.png" width="850">
+</p>
+
+<p align="center">
+  <b>Validation results of the baseline multi-label emotion classification model using precision, recall, F1-score, Hamming Loss, and Exact Accuracy</b>
+</p>
+
+#### 11. Stress Vulnerability Index & Risk Mapping
+
+<p align="center">
+  <img src="screenshots/11-svi-risk-mapping.png" width="850">
+</p>
+
+<p align="center">
+  <b>Conversion of emotion signals into Stress Vulnerability Index (SVI) and risk category</b>
+</p>
+
+#### 12. FastAPI Interface Verification
+
+<p align="center">
+  <img src="screenshots/12-fastapi-interface-verification.png" width="850">
+</p>
+
+<p align="center">
+  <b>Verification that the FastAPI interface is ready for integration with the RAAHAT-AI inference service</b>
+</p>
+
+
+#### 13. API Prediction Testing
+
+<p align="center">
+  <img src="screenshots/13-api-prediction-test.png" width="850">
+</p>
+
+<p align="center">
+  <b>Testing the /predict API endpoint with sample text and receiving emotion signals, SVI score, risk category, and human-review indication</b>
+</p>
+
+#### 14. Automated Inference Test Suite
+
+<p align="center">
+  <img src="screenshots/14-inference-test-suite.png" width="850">
+</p>
+
+<p align="center">
+  <b>Automated validation of inference behavior, edge cases, consistency, input handling, and output structure</b>
+</p>
+
+#### 15. Final Environment Verification
+
+<p align="center">
+  <img src="screenshots/15-final-environment-verification.png" width="850">
+</p>
+
+<p align="center">
+  <b>Final verification of dependencies, AI inference, SVI, risk classification, human review, and overall system status</b>
+</p>
+
+#### 16. Responsible AI & Safety Documentation
+
+<p align="center">
+  <img src="screenshots/16-responsible-ai-safety-documentation.png" width="850">
+</p>
+
+<p align="center">
+  <b>Responsible AI documentation covering non-clinical use, human review, limitations, privacy, fairness, safety, and appropriate system usage</b>
+</p>
+
+#### 17. Model Artifacts Verification
+
+<p align="center">
+  <img src="screenshots/17-model-artifacts-verification.png" width="850">
+</p>
+
+<p align="center">
+  <b>Verification of the trained model, TF-IDF vectorizer, evaluation metrics, model comparison, and documentation artifacts</b>
+</p>
+
+#### 18. AI/ML Feature Specification & Pipeline
+
+<p align="center">
+  <img src="screenshots/18-ai-ml-feature-pipeline.png" width="850">
+</p>
+
+<p align="center">
+  <b>Complete AI/ML pipeline from user text preprocessing and TF-IDF feature extraction to emotion signals and Stress Vulnerability Index</b>
+</p>
+
+
+#### 19. Class-Wise Model Evaluation Metrics
+
+<p align="center">
+  <img src="screenshots/19-classwise-model-metrics.png" width="850">
+</p>
+
+<p align="center">
+  <b>Class-wise evaluation metrics generated for the multi-label emotion classification model</b>
+</p>
+
+#### 20. Real Inference Pipeline Test
+
+<p align="center">
+  <img src="screenshots/20-real-inference-pipeline-test.png" width="850">
+</p>
+
+<p align="center">
+  <b>End-to-end inference pipeline test producing emotion predictions, signal strengths, Stress Vulnerability Index, risk category, and human-review indication</b>
+</p>
+
+#### 21. Inference Contract Documentation
+
+<p align="center">
+  <img src="screenshots/21-inference-contract-documentation.png" width="850">
+</p>
+
+<p align="center">
+  <b>Inference contract documenting the expected input, output structure, and behavior of the RAAHAT-AI inference pipeline</b>
+</p>
+
+#### 22. Inference Robustness Testing
+
+<p align="center">
+  <img src="screenshots/22-inference-robustness-testing.png" width="850">
+</p>
+
+<p align="center">
+  <b>Robustness testing of the inference pipeline across distress-related, neutral, positive, empty, and repeated inputs</b>
+</p>
+
+#### 23. Inference Contract Verification
+
+<p align="center">
+  <img src="screenshots/23-inference-contract-verification.png" width="850">
+</p>
+
+<p align="center">
+  <b>Verification of the inference contract, AI prediction output, SVI, risk category, human review, and diagnostic status</b>
+</p>
+
+#### 24. Backend Output Verification
+
+<p align="center">
+  <img src="screenshots/24-backend-output-verification.png" width="850">
+</p>
+
+<p align="center">
+  <b>Backend verification of predicted emotions, SVI score, risk category, signal groups, human-review status, and diagnostic flag</b>
+</p>
+
+#### 25. Real Inference Pipeline Test
+
+<p align="center">
+  <img src="screenshots/25-real-inference-pipeline-test.png" width="850">
+</p>
+
+<p align="center">
+  <b>Real inference pipeline test demonstrating emotion prediction, signal strength, Stress Vulnerability Index, risk category, and human-review indication</b>
+</p>
+
+
+#### 26. FastAPI Server & Swagger Documentation Verification
+
+<p align="center">
+  <img src="screenshots/26-fastapi-swagger-verification.png" width="850">
+</p>
+
+<p align="center">
+  <b>Verification of the FastAPI service and interactive Swagger API documentation interface</b>
+</p>
+
+
+#### 27. FastAPI API Documentation Interface
+
+<p align="center">
+  <img src="screenshots/27-fastapi-api-documentation.png" width="850">
+</p>
+
+<p align="center">
+  <b>Interactive FastAPI Swagger/OpenAPI interface exposing the RAAHAT-AI API endpoints</b>
+</p>
+
+
+#### 28. FastAPI Health Check
+
+<p align="center">
+  <img src="screenshots/28-fastapi-health-check.png" width="850">
+</p>
+
+<p align="center">
+  <b>Health-check verification confirming that the RAAHAT AI FastAPI service is running and remains non-diagnostic</b>
+</p>
+
+#### 29. FastAPI Error Handling Test
+
+<p align="center">
+  <img src="screenshots/29-fastapi-error-handling.png" width="850">
+</p>
+
+<p align="center">
+  <b>API error-handling verification demonstrating how the FastAPI service handles invalid prediction requests</b>
+</p>
+
+#### 30. FastAPI Prediction Response Verification
+
+<p align="center">
+  <img src="screenshots/30-fastapi-prediction-response.png" width="850">
+</p>
+
+<p align="center">
+  <b>Verification of the FastAPI prediction endpoint and structured AI inference response</b>
+</p>
+
+
+#### 31. FastAPI API Output Verification
+
+<p align="center">
+  <img src="screenshots/31-fastapi-api-output-verification.png" width="850">
+</p>
+
+<p align="center">
+  <b>Verification of the FastAPI prediction endpoint and structured AI output returned by the RAAHAT AI backend</b>
+</p>
+
+#### 32. Optimized Inference Test
+
+<p align="center">
+  <img src="screenshots/32-optimized-inference-test.png" width="850">
+</p>
+
+<p align="center">
+  <b>Optimized inference verification demonstrating emotion prediction, Stress Vulnerability Index, risk classification, and human-review status</b>
+</p>
+
+#### 33. Model Artifacts Verification
+
+<p align="center">
+  <img src="screenshots/33-model-artifacts-verification.png" width="850">
+</p>
+
+<p align="center">
+  <b>Verification of the trained model, TF-IDF vectorizer, evaluation metrics, model comparison, and documentation artifacts</b>
+</p>
+
+
+#### 34. Baseline Error Analysis
+
+<p align="center">
+  <img src="screenshots/34-baseline-error-analysis.png" width="850">
+</p>
+
+<p align="center">
+  <b>Baseline error analysis identifying low-performing emotion classes and saving detailed error-analysis results</b>
+</p>
+
+#### 35. Linear SVM Validation & Final Model Evaluation
+
+<p align="center">
+  <img src="screenshots/35-linear-svm-validation-results.png" width="850">
+</p>
+
+<p align="center">
+  <b>Validation of the selected One-vs-Rest Linear SVM model with overall and class-wise performance metrics</b>
+</p>
+
+#### 36. Linear SVM Model Creation & Environment Verification
+
+<p align="center">
+  <img src="screenshots/36-linear-svm-model-creation.png" width="850">
+</p>
+
+<p align="center">
+  <b>Verification of the Linear SVM model creation and One-vs-Rest multi-label classification setup</b>
+</p>
+
+#### 37. Linear SVM Training & Model Persistence
+
+<p align="center">
+  <img src="screenshots/37-linear-svm-training-persistence.png" width="850">
+</p>
+
+<p align="center">
+  <b>Successful Linear SVM training with TF-IDF features and persistence of the trained model and vectorizer artifacts</b>
+</p>
+
+#### 38. Stress Signal Mapping Documentation
+
+<p align="center">
+  <img src="screenshots/38-stress-signal-mapping-documentation.png" width="850">
+</p>
+
+<p align="center">
+  <b>Verification of the Stress Signal Mapping documentation used to connect detected emotion signals with the RAAHAT AI risk-assessment workflow</b>
+</p>
+
+#### 39. Class-Wise Baseline Metrics
+
+<p align="center">
+  <img src="screenshots/39-class-wise-baseline-metrics.png" width="850">
+</p>
+
+<p align="center">
+  <b>Detailed class-wise evaluation of the baseline multi-label model across individual emotion categories</b>
+</p>
+
+#### 40. Text Preprocessing Consistency Test
+
+<p align="center">
+  <img src="screenshots/40-preprocessing-consistency-test.png" width="850">
+</p>
+
+<p align="center">
+  <b>Consistency testing of the text preprocessing pipeline across repeated inference runs and different input samples</b>
+</p>
+
+
+#### 41. Baseline Model Training & Artifact Creation
+
+<p align="center">
+  <img src="screenshots/41-baseline-model-training.png" width="850">
+</p>
+
+<p align="center">
+  <b>Successful baseline model training using TF-IDF features with creation of the trained model and vectorizer artifacts</b>
+</p>
+
+#### 42. TF-IDF Feature Extraction Test
+
+<p align="center">
+  <img src="screenshots/42-tfidf-feature-extraction-test.png" width="850">
+</p>
+
+<p align="center">
+  <b>TF-IDF feature extraction verification showing vocabulary size, feature matrix dimensions, and generated unigram and bigram features</b>
+</p>
+
+#### 43. Model Comparison Results
+
+<p align="center">
+  <img src="screenshots/43-model-comparison-results.png" width="850">
+</p>
+
+<p align="center">
+  <b>Comparison of Logistic Regression and Linear SVM models using multi-label evaluation metrics for MVP model selection</b>
+</p>
+
+#### 44. Baseline Model Configuration Verification
+
+<p align="center">
+  <img src="screenshots/44-baseline-model-configuration.png" width="850">
+</p>
+
+<p align="center">
+  <b>Verification of the baseline One-vs-Rest Logistic Regression model configuration before training</b>
+</p>
+
+
+#### 45. Text Preprocessing Module Implementation
+
+<p align="center">
+  <img src="screenshots/45-text-preprocessing-module.png" width="850">
+</p>
+
+<p align="center">
+  <b>Implementation of the reusable and deterministic text preprocessing module used during training and inference</b>
+</p>
+
+#### 46. TF-IDF Feature Engineering Module
+
+<p align="center">
+  <img src="screenshots/46-tfidf-feature-engineering-module.png" width="850">
+</p>
+
+<p align="center">
+  <b>Implementation of the TF-IDF feature engineering module using unigram and bigram text features for machine learning</b>
+</p>
+
+#### 47. Stress Vulnerability Index (SVI) Calculation & Risk Mapping
+
+<p align="center">
+  <img src="screenshots/47-svi-calculation-risk-mapping.png" width="850">
+</p>
+
+<p align="center">
+  <b>Real inference demonstration showing emotion signals mapped into the Stress Vulnerability Index, risk category, and human-review requirement</b>
+</p>
+
+#### 48. Emotion Class Distribution Analysis
+
+<p align="center">
+  <img src="screenshots/48-emotion-class-distribution.png" width="850">
+</p>
+
+<p align="center">
+  <b>Visualization of the distribution of emotion classes in the processed GoEmotions dataset</b>
+</p>
+
+### Screenshot 49 — Text Length Analysis
+
+Text length analysis was performed on the training dataset to understand the distribution of input text before feature engineering and model training.
+
+![Text Length Analysis](screenshots/49-text-length-analysis.png)
+
+## API Usage
+
+RAAHAT-AI provides a REST API using FastAPI for health checking and AI-based text inference.
+
+### 1. Health Check
+
+**Method:** `GET`
+
+**Endpoint:**
 
 ```text
-screenshots/
-│
-├── 01-environment.png
-├── 02-project-structure.png
-├── 03-dataset.png
-├── 04-processed-dataset.png
-├── 05-data-quality.png
-├── 06-duplicate-analysis.png
-├── 07-text-normalization.png
-├── 08-leakage-prevention.png
-├── 09-dataset-split.png
-├── 10-tfidf.png
-├── 11-model-training.png
-├── 12-model-evaluation.png
-├── 13-model-artifacts.png
-├── 14-inference.png
-├── 15-fastapi.png
-├── 16-swagger.png
-├── 17-backend-integration.png
-├── 18-responsible-ai.png
-└── 19-final-testing.png
-```
+http://127.0.0.1:8000/
 
----
+Example
+curl http://127.0.0.1:8000/
 
-# Challenges and Solutions
-
-## Challenge 1 — Duplicate Records
-
-### Problem
-
-Repeated text was present in the dataset.
-
-### Solution
-
-Duplicate analysis and normalized text grouping were performed.
-
----
-
-## Challenge 2 — Different Labels for Repeated Text
-
-### Problem
-
-Some duplicate groups contained different emotion sets.
-
-### Solution
-
-The duplicate groups were analyzed rather than blindly deleting every repeated record.
-
----
-
-## Challenge 3 — Data Leakage
-
-### Problem
-
-A normal random row-level split could place related text into multiple partitions.
-
-### Solution
-
-Group-aware splitting using:
-
-```python
-GroupShuffleSplit(random_state=42)
-```
-
----
-
-## Challenge 4 — Training and Inference Consistency
-
-### Problem
-
-A different preprocessing process during inference could produce incorrect predictions.
-
-### Solution
-
-The inference pipeline uses the same feature-processing approach as the trained model.
-
----
-
-## Challenge 5 — Backend Integration
-
-### Problem
-
-The Backend should not depend on a training notebook.
-
-### Solution
-
-Standalone inference was separated and exposed through FastAPI.
-
----
-
-## Challenge 6 — Responsible Interpretation
-
-### Problem
-
-Emotion classification can easily be misinterpreted as psychological diagnosis.
-
-### Solution
-
-The system explicitly uses non-clinical vulnerability indicators and retains human review.
-
----
-
-# Limitations
-
-RAAHAT-AI has several limitations.
-
-### 1. Text-Based Analysis
-
-The system only receives textual information and therefore cannot understand every aspect of a person's real-world situation.
-
-### 2. Context
-
-Words may have different meanings depending on context.
-
-### 3. Sarcasm
-
-Sarcasm and indirect communication can be difficult for traditional NLP models.
-
-### 4. Dataset Bias
-
-The GoEmotions dataset may not represent every population, language or cultural context.
-
-### 5. Language Coverage
-
-The current model is limited by its training data and should not be assumed to support every language equally.
-
-### 6. Non-Clinical System
-
-The model cannot determine whether a person has a psychological or medical condition.
-
-### 7. Human Oversight
-
-AI output requires appropriate human interpretation.
-
----
-
-# Future Scope
-
-Potential future improvements include:
-
-## Multilingual NLP
-
-Support for Indian and regional languages.
-
-## Transformer Models
-
-Experiment with contextual models such as transformer-based architectures after establishing appropriate evaluation.
-
-## Better Explainability
-
-Provide more detailed explanations of model outputs.
-
-## Model Monitoring
-
-Monitor:
-
-* Model performance
-* Prediction distributions
-* Data drift
-* Model drift
-
-## Human Feedback
-
-Introduce a controlled feedback mechanism to identify incorrect predictions and improve the system.
-
-## Cloud Deployment
-
-Deploy the validated inference service using appropriate cloud infrastructure.
-
-## Security Improvements
-
-Add:
-
-* Authentication
-* Authorization
-* HTTPS
-* Rate limiting
-* Secure secrets management
-* Audit logging
-
----
-
-# Member 2 Contribution
-
-## AI/ML Engineer
-
-The AI/ML responsibilities were implemented as Member 2.
-
-### Data Responsibilities
-
-* Dataset collection
-* Dataset processing
-* Data quality analysis
-* Missing-value verification
-* Duplicate analysis
-* Text normalization
-* Group creation
-* Leakage prevention
-* Dataset splitting
-
-### Machine Learning Responsibilities
-
-* Feature engineering
-* TF-IDF
-* Linear SVM
-* Model training
-* Model evaluation
-* Model serialization
-
-### AI Logic Responsibilities
-
-* Emotion signal processing
-* Stress signal grouping
-* Stress Vulnerability Index
-* Risk interpretation
-
-### Engineering Responsibilities
-
-* Standalone inference
-* FastAPI integration
-* API validation
-* API error handling
-* AI-to-Backend contract
-
-### Documentation Responsibilities
-
-* AI/ML documentation
-* Responsible AI
-* Data governance
-* Model governance
-* Testing evidence
-* Implementation screenshots
-
----
-
-# Project Completion Checklist
-
-```text
-[x] Environment configured
-[x] Python virtual environment created
-[x] Git repository configured
-[x] Project structure created
-[x] GoEmotions dataset collected
-[x] Dataset processed
-[x] Consensus dataset created
-[x] Missing-value validation completed
-[x] Duplicate ID validation completed
-[x] Duplicate text analysis completed
-[x] Text normalization completed
-[x] text_group created
-[x] Leakage prevention implemented
-[x] Group-aware splitting completed
-[x] Training dataset created
-[x] Validation dataset created
-[x] Test dataset created
-[x] TF-IDF feature engineering implemented
-[x] Linear SVM implemented
-[x] Model training completed
-[x] Model evaluation workflow completed
-[x] Model serialization implemented
-[x] Standalone inference implemented
-[x] FastAPI service implemented
-[x] Health endpoint implemented
-[x] Prediction endpoint implemented
-[x] API validation implemented
-[x] API error handling implemented
-[x] Swagger documentation available
-[x] Responsible AI documented
-[x] AI → Backend interface defined
-[x] Project documentation completed
-```
-
----
-
-# Screenshots Gallery
-
-Replace the placeholders below with your actual screenshots.
-
-## 1. Environment Setup
-
-![Environment Setup](screenshots/01-environment.png)
-
-**Evidence:** Python, pip and development environment.
-
----
-
-## 2. Project Structure
-
-![Project Structure](screenshots/02-project-structure.png)
-
-**Evidence:** RAAHAT-AI directory organization.
-
----
-
-## 3. GoEmotions Dataset
-
-![Dataset](screenshots/03-dataset.png)
-
-**Evidence:** Original dataset files.
-
----
-
-## 4. Processed Dataset
-
-![Processed Dataset](screenshots/04-processed-dataset.png)
-
-**Evidence:** `goemotions_consensus.csv`.
-
----
-
-## 5. Dataset Quality
-
-![Data Quality](screenshots/05-data-quality.png)
-
-**Evidence:** Missing-value and duplicate-ID checks.
-
----
-
-## 6. Duplicate Analysis
-
-![Duplicate Analysis](screenshots/06-duplicate-analysis.png)
-
-**Evidence:** Raw duplicate-text analysis.
-
----
-
-## 7. Text Normalization
-
-![Text Normalization](screenshots/07-text-normalization.png)
-
-**Evidence:** `text_group` creation and normalized grouping.
-
----
-
-## 8. Leakage Prevention
-
-![Leakage Prevention](screenshots/08-leakage-prevention.png)
-
-**Evidence:** Group-aware splitting.
-
----
-
-## 9. Dataset Split
-
-![Dataset Split](screenshots/09-dataset-split.png)
-
-**Evidence:** Train/validation/test dataset sizes.
-
----
-
-## 10. TF-IDF Feature Engineering
-
-![TF-IDF](screenshots/10-tfidf.png)
-
-**Evidence:** TF-IDF implementation.
-
----
-
-## 11. Model Training
-
-![Model Training](screenshots/11-model-training.png)
-
-**Evidence:** Linear SVM training.
-
----
-
-## 12. Model Evaluation
-
-![Model Evaluation](screenshots/12-model-evaluation.png)
-
-**Evidence:** Evaluation metrics.
-
----
-
-## 13. Model Artifacts
-
-![Model Artifacts](screenshots/13-model-artifacts.png)
-
-**Evidence:** Saved model/preprocessing artifacts.
-
----
-
-## 14. Standalone Inference
-
-![Inference](screenshots/14-inference.png)
-
-**Evidence:** Standalone prediction pipeline.
-
----
-
-## 15. FastAPI
-
-![FastAPI](screenshots/15-fastapi.png)
-
-**Evidence:** FastAPI application.
-
----
-
-## 16. Swagger API
-
-![Swagger](screenshots/16-swagger.png)
-
-**Evidence:** Interactive API documentation.
-
----
-
-## 17. Backend Integration
-
-![Backend Integration](screenshots/17-backend-integration.png)
-
-**Evidence:** AI-to-Backend communication.
-
----
-
-## 18. Responsible AI
-
-![Responsible AI](screenshots/18-responsible-ai.png)
-
-**Evidence:** Non-clinical and human-review principles.
-
----
-
-## 19. Final Testing
-
-![Final Testing](screenshots/19-final-testing.png)
-
-**Evidence:** Final API and inference testing.
-
----
-
-# How to Run
-
-## Clone Repository
-
-```bash
-git clone https://github.com/tanjilakhatri/RAAHAT-AI.git
-```
-
-## Enter Directory
-
-```bash
-cd RAAHAT-AI
-```
-
-## Create Virtual Environment
-
-```bash
-python -m venv .venv
-```
-
-## Activate Environment — Windows
-
-```powershell
-.venv\Scripts\activate
-```
-
-## Install Requirements
-
-```bash
-pip install -r requirements.txt
-```
-
-## Start API
-
-```bash
-uvicorn api:app --reload
-```
-
-The service will run locally at:
-
-```text
-http://127.0.0.1:8000
-```
-
----
-
-# API Documentation
-
-FastAPI automatically generates interactive documentation.
-
-Open:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-Available endpoints:
-
-```text
-GET  /
-POST /predict
-```
-
----
-
-# Health Check
-
-### Request
-
-```text
-GET /
-```
-
-### Response
-
-```json
+Example response
 {
   "service": "RAAHAT AI",
   "status": "running",
   "diagnostic": false
 }
-```
 
----
+## Example API Response
 
-# Prediction API
-
-### Request
-
-```text
-POST /predict
-```
-
-### Body
+A successful `/predict` request returns the processed input, predicted emotions, emotion signal strengths, SVI score, risk category, signal groups, and human-review status.
 
 ```json
 {
-  "text": "I feel scared and confused about the situation."
+  "input_text": "I am very scared and confused about what happened.",
+  "predicted_emotions": ["confusion", "fear"],
+  "svi_score": 30.46,
+  "risk_category": "Moderate",
+  "human_review_required": true,
+  "diagnostic": false
 }
+
+## Limitations
+
+RAAHAT-AI is an MVP designed for non-clinical stress and distress vulnerability assessment. The current system has the following limitations:
+
+- The model is trained on text-based emotion data and may not capture every form of human distress.
+- Predictions may contain false positives or false negatives.
+- The system may perform differently across languages, writing styles, and cultural contexts.
+- The Stress Vulnerability Index (SVI) is an indicator and should not be interpreted as a clinical score.
+- Human review is required for situations where the system identifies a moderate or higher vulnerability signal.
+- The current model requires further validation on diverse, real-world datasets.
+
+> **Important:** RAAHAT-AI does not diagnose mental health conditions and should not replace professional assessment.
+
+## Responsible AI & Safety
+
+RAAHAT-AI is designed as a **non-clinical AI support system** for identifying potential stress, trauma, and distress vulnerability signals from text.
+
+### Safety Principles
+
+- The system does **not provide medical or psychological diagnosis**.
+- The Stress Vulnerability Index (SVI) is an indicator, not a clinical measurement.
+- AI predictions should be treated as supportive signals rather than final decisions.
+- Moderate or higher vulnerability signals can be flagged for **human review**.
+- The system should not be used as the sole basis for medical, emergency, or other high-impact decisions.
+- Model limitations, false positives, false negatives, dataset limitations, and language limitations should be considered when interpreting results.
+
+> **Safety Principle:** RAAHAT-AI supports human decision-making; it does not replace qualified human judgment or professional assessment.
+
+### Next Section: Future Improvements
+
+**MODIFY EXISTING FILE — `README.md`**
+
+Paste **only this** after `## Responsible AI & Safety`:
+
+```markdown id="x3h5qz"
+## Future Improvements
+
+The current RAAHAT-AI MVP can be further improved through:
+
+- Training and validating the model on larger and more diverse datasets.
+- Improving performance across different languages and writing styles.
+- Evaluating additional machine learning and transformer-based models.
+- Improving emotion-level and vulnerability-level prediction accuracy.
+- Strengthening explainability of AI-generated signals.
+- Adding continuous model monitoring and validation.
+- Improving privacy and secure handling of user-provided text.
+- Conducting broader real-world testing with appropriate human oversight.
+- Extending the system with additional responsible AI and safety mechanisms.
+
+These improvements can help make RAAHAT-AI more reliable, explainable, scalable, and suitable for future development.
 ```
 
-The API sends the text to:
+## Team & Contribution
 
-```python
-run_inference(request.text)
-```
+RAAHAT-AI was developed as a team project for **Smart India Hackathon 2026** under Problem Statement **SIH 26093**.
 
-and returns the inference result.
+### My Contribution — Member 2: AI/ML
 
----
+My primary contribution focused on the AI/ML workflow of the project:
 
-# API Error Handling
+- GoEmotions dataset preparation and validation
+- Data quality analysis and leakage prevention
+- Text preprocessing and normalization
+- TF-IDF feature engineering
+- Multi-label emotion classification
+- Logistic Regression baseline development
+- Linear SVM model development and comparison
+- Model evaluation and error analysis
+- Model persistence and artifact verification
+- Inference pipeline development
+- Stress Vulnerability Index (SVI) and risk mapping integration
+- Inference testing and validation
+- FastAPI integration support
+- AI/ML documentation and responsible AI documentation
 
-## HTTP 400
+The AI/ML component was designed to provide interpretable, non-clinical vulnerability signals that can support human review.
 
-A `ValueError` generated during inference is converted into:
+## Conclusion
 
-```text
-400 Bad Request
-```
+RAAHAT-AI is an AI-based, non-clinical system designed to identify potential stress, trauma, and distress vulnerability signals from user-provided text.
 
-## HTTP 500
+The project combines text preprocessing, TF-IDF feature engineering, multi-label emotion classification, Linear SVM, emotion signal mapping, and the Stress Vulnerability Index (SVI) into a complete inference pipeline.
 
-Unexpected failures are returned as:
+The system also includes FastAPI integration, automated testing, human-review indicators, and responsible AI safeguards.
 
-```text
-500 Internal Server Error
-```
-
-with:
-
-```json
-{
-  "detail": "AI inference failed."
-}
-```
-
----
-
-# Responsible AI Disclaimer
-
-RAAHAT-AI is an **AI-assisted decision-support system**.
-
-It does not provide:
-
-* Medical diagnosis
-* Psychiatric diagnosis
-* PTSD diagnosis
-* Depression diagnosis
-* Anxiety diagnosis
-* Psychological treatment
-* Professional counselling
-
-Model outputs should be interpreted carefully and, where appropriate, reviewed by qualified humans.
-
-The AI output should be considered a **signal**, not a final decision.
-
----
-
-# Conclusion
-
-RAAHAT-AI demonstrates the implementation of a complete AI/ML pipeline for emotionally relevant text analysis.
-
-The project progresses from:
-
-```text
-Dataset
-   ↓
-Data Quality
-   ↓
-Duplicate Analysis
-   ↓
-Leakage Prevention
-   ↓
-Feature Engineering
-   ↓
-Machine Learning
-   ↓
-Evaluation
-   ↓
-Model Serialization
-   ↓
-Standalone Inference
-   ↓
-FastAPI
-   ↓
-Backend Integration
-   ↓
-Human Review
-```
-
-The project demonstrates practical AI engineering rather than only model training.
-
-The most important engineering principles followed are:
-
-```text
-Reliable Data
-      +
-Leakage Awareness
-      +
-Reproducible ML
-      +
-Reusable Inference
-      +
-API Integration
-      +
-Responsible AI
-      +
-Human Oversight
-```
-
----
-
-## RAAHAT-AI
-
-**Smart India Hackathon 2026**
-
-**Problem Statement: SIH 26093**
-
-**AI/ML Component — Member 2**
-
-> **Building AI that assists human decision-making, not AI that replaces it.**
+RAAHAT-AI is currently an MVP and provides supportive vulnerability indicators rather than medical diagnosis. Future improvements can further enhance its accuracy, reliability, explainability, and real-world applicability.
