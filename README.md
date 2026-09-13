@@ -51,8 +51,8 @@ RAAHAT AI processes text input and converts emotional signals into an interpreta
 
 The system follows this pipeline:
 
-```text
-User Text
+```
+  text
     ↓
 Input Validation
     ↓
@@ -76,82 +76,51 @@ FastAPI Response
 
 ## Table of Contents
 
+- [Project at a Glance](#project-at-a-glance)
+- [What RAAHAT AI Does](#what-raahat-ai-does)
 - [Project Overview](#project-overview)
 - [Problem Statement](#problem-statement)
 - [Project Motivation](#project-motivation)
 - [Proposed Solution](#proposed-solution)
 - [Project Objectives](#project-objectives)
 - [Key Features](#key-features)
+- [Technology Stack](#technology-stack)
+- [Installation & Setup](#installation--setup)
+- [Running RAAHAT-AI](#running-raahat-ai)
+- [API Usage](#api-usage)
 - [Complete Project Workflow](#complete-project-workflow)
 - [System Architecture](#system-architecture)
 - [AI/ML Architecture](#aiml-architecture)
-- [Technology Stack](#technology-stack)
+- [My Role as Member 2 — AI/ML](#my-role-as-member-2--aiml)
 - [Dataset](#dataset)
 - [Dataset Preparation](#dataset-preparation)
 - [Data Quality Analysis](#data-quality-analysis)
-- [Duplicate Analysis](#duplicate-analysis)
-- [Text Normalization and Grouping](#text-normalization-and-grouping)
+- [Duplicate Text Analysis](#duplicate-text-analysis)
 - [Data Leakage Prevention](#data-leakage-prevention)
 - [Dataset Splitting](#dataset-splitting)
 - [Feature Engineering](#feature-engineering)
 - [Machine Learning Pipeline](#machine-learning-pipeline)
-- [Baseline Model](#baseline-model)
 - [Model Evaluation](#model-evaluation)
-- [Model Comparison](#model-comparison)
-- [Final Model Selection](#final-model-selection)
-- [Model Artifacts](#model-artifacts)
+- [Model Persistence](#model-persistence)
 - [Standalone Inference](#standalone-inference)
-- [Stress Vulnerability Index](#stress-vulnerability-index)
-- [Risk Categorization](#risk-categorization)
-- [Human Review](#human-review)
 - [FastAPI Integration](#fastapi-integration)
-- [API Documentation](#api-documentation)
-- [AI-to-Backend Integration](#ai-to-backend-integration)
+- [API Endpoints](#api-endpoints)
+- [AI to Backend Integration](#ai-to-backend-integration)
 - [Testing](#testing)
-- [Responsible AI](#responsible-ai)
-- [Privacy and Data Safety](#privacy-and-data-safety)
-- [Challenges and Solutions](#challenges-and-solutions)
-- [Engineering Decisions](#engineering-decisions)
-- [Project Implementation](#project-implementation)
-- [Screenshots and Evidence](#screenshots-and-evidence)
 - [Project Structure](#project-structure)
-- [Current Project Status](#current-project-status)
-- [Future Scope](#future-scope)
-- [Learning Outcomes](#learning-outcomes)
-- [Team Contribution](#team-contribution)
+- [Screenshots and Evidence](#screenshots-and-evidence)
+- [Limitations](#limitations)
+- [Responsible AI & Safety](#responsible-ai--safety)
+- [Future Improvements](#future-improvements)
+- [Team & Contribution](#team--contribution)
 - [Conclusion](#conclusion)
-- [Disclaimer](#disclaimer)
-
----
 
 ## Project Overview
 
 RAAHAT AI is an Artificial Intelligence and Machine Learning based system developed for the **Smart India Hackathon 2026 problem statement SIH 26093**.
-
 The project focuses on identifying textual signals associated with stress, trauma, fear, confusion, and other emotional states and converting these signals into a structured vulnerability indicator.
-
 Instead of treating the output as a medical diagnosis, RAAHAT AI is designed as a **non-clinical AI-assisted assessment and decision-support system**.
-
 The machine learning component processes text through a complete pipeline:
-
-```text
-Raw Text
-   ↓
-Text Preprocessing
-   ↓
-TF-IDF Feature Extraction
-   ↓
-Multi-Label Emotion Classification
-   ↓
-Emotion Signal Strength
-   ↓
-Signal Group Mapping
-   ↓
-Stress Vulnerability Index (SVI)
-   ↓
-Risk Category
-   ↓
-Human Review Indicator
 
 ## Problem Statement
 
@@ -241,11 +210,10 @@ The backend can send text to:
 ```http
 POST /predict
 
+
 ## Project Objectives
 
 The main objective of RAAHAT AI is to develop an AI-assisted system that can analyze text-based emotional signals and convert them into an interpretable vulnerability indicator for further human attention.
-
-The project objectives are:
 
 ### 1. Analyze Text-Based Emotional Signals
 
@@ -1989,10 +1957,6 @@ RAAHAT-AI demonstrates an end-to-end AI/ML workflow for non-clinical stress, tra
 The system combines emotion classification, stress signal mapping, SVI calculation, human-review indicators, and a FastAPI interface into a practical MVP.
 
 The project is intended as a responsible AI prototype that can be further evaluated and improved before any real-world deployment.
-
-
-
-
 
 The system also includes FastAPI integration, automated testing, human-review indicators, and responsible AI safeguards.
 
