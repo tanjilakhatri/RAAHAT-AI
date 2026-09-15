@@ -1,0 +1,27 @@
+﻿.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.env
+.env.*
+!.env.example
+
+.vscode/
+.idea/
+
+*.log
+.DS_Store
+Thumbs.db
+
+*.tmp
+*.temp
+
+# GoEmotions raw source files
+data/goemotions/goemotions_1.csv
+data/goemotions/goemotions_2.csv
+data/goemotions/goemotions_3.csv
+
+# Windows system files
+desktop.ini
